@@ -1,1 +1,207 @@
-111
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Use | SinoWellJourneys</title>
+
+  <style>
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      color:#111;
+      background:#fafafa;
+    }
+    header{
+      background:#0b1220;
+      color:#fff;
+      padding: 48px 20px;
+    }
+    .wrap{max-width: 980px; margin: 0 auto;}
+    h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+    .subhead{margin:0; font-size: 18px; opacity:.9;}
+    main{padding: 28px 20px 60px;}
+    section{
+      background:#fff;
+      border: 1px solid #eaeaea;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    h2{margin: 0 0 10px 0; font-size: 22px;}
+    h3{margin: 14px 0 6px; font-size: 18px;}
+    ul,ol{margin: 8px 0 0 20px;}
+    footer{
+      padding: 18px 20px 30px;
+      color:#666;
+      text-align:center;
+    }
+    .links a{
+      display:inline-block;
+      margin: 6px 10px 0 0;
+      padding: 8px 12px;
+      border:1px solid #e6e6e6;
+      border-radius: 999px;
+      text-decoration:none;
+      color:#111;
+      background:#fff;
+    }
+    .links a:hover{border-color:#cfcfcf;}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    a{color:#2563eb;}
+  </style>
+
+  <script>
+    const LANG_KEY = 'swj_lang';
+
+    function applyLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      document.documentElement.lang = lang;
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+      let lang = 'en';
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      if(!['en','zh','hu'].includes(lang)) lang = 'en';
+      applyLang(lang);
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1 data-lang="en">Terms of Use &amp; Legal Disclaimer</h1>
+      <h1 data-lang="zh" style="display:none">使用条款与法律声明</h1>
+      <h1 data-lang="hu" style="display:none">Felhasználási feltételek &amp; jogi nyilatkozat</h1>
+
+      <p class="subhead" data-lang="en">SinoWellJourneys Travel</p>
+      <p class="subhead" data-lang="zh" style="display:none">SinoWellJourneys Travel</p>
+      <p class="subhead" data-lang="hu" style="display:none">SinoWellJourneys Travel</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ================= EN ================= -->
+    <div data-lang="en">
+      <section>
+        <p><b>Effective Date:</b> [insert date]</p>
+        <p>
+          These Terms of Use govern your access to and use of the SinoWellJourneys Travel website operated by
+          <b>Magyor Well-Chi Travel Platform Kft</b>, Budapest, Hungary (“SinoWellJourneys Travel”).
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Nature of the Website</h2>
+        <p>
+          This website is an informational platform. SinoWellJourneys Travel does not operate as a retail travel agency
+          and does not sell travel services directly to consumers.
+        </p>
+        <p>
+          All travel bookings, payments and customer contracts are handled by independent, licensed travel agencies.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. No Direct Sales</h2>
+        <p>SinoWellJourneys Travel does not:</p>
+        <ul>
+          <li>Accept bookings</li>
+          <li>Process payments</li>
+          <li>Issue tickets</li>
+          <li>Enter into travel contracts with end customers</li>
+        </ul>
+        <p>
+          Any references to prices, itineraries or programs are for informational purposes only.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Role of SinoWellJourneys Travel</h2>
+        <p>SinoWellJourneys Travel acts as:</p>
+        <ul>
+          <li>A travel organiser</li>
+          <li>A wholesale product provider</li>
+          <li>A cross-border service coordinator</li>
+        </ul>
+        <p>
+          SinoWellJourneys Travel contracts with licensed Chinese travel agencies and medical institutions
+          to arrange travel and wellness programs for European travel agencies.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Medical Disclaimer</h2>
+        <p>
+          SinoWellJourneys Travel does not provide medical advice, diagnosis or treatment.
+          All medical and wellness services are provided solely by licensed Chinese medical institutions.
+          No medical outcomes are guaranteed.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Third-Party Services</h2>
+        <p>
+          All travel, accommodation, transport, guiding and medical services are provided by independent third-party suppliers.
+          SinoWellJourneys Travel is not responsible for the acts or omissions of such suppliers beyond its contractual
+          obligations to travel agencies.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Limitation of Liability</h2>
+        <p>SinoWellJourneys Travel shall not be liable for:</p>
+        <ul>
+          <li>Any direct or indirect loss</li>
+          <li>Personal dissatisfaction</li>
+          <li>Medical outcomes</li>
+          <li>Any consumer claims</li>
+        </ul>
+        <p>
+          All customer claims must be addressed to the travel agency with which the customer booked.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Intellectual Property</h2>
+        <p>
+          All content, trademarks and materials on this website belong to SinoWellJourneys Travel or its partners
+          and may not be used without prior permission.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Governing Law</h2>
+        <p>
+          These Terms shall be governed by the laws of Hungary.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Contact</h2>
+        <p>
+          For legal or compliance inquiries:<br/>
+          📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+        </p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">Back to Home</a>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="mono">©</span> SinoWellJourneys
+    </div>
+  </footer>
+</body>
+</html>
