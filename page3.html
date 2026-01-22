@@ -20,6 +20,15 @@
     }
     .wrap{max-width: 980px; margin: 0 auto;}
     h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+
+    /* ✅ 与前面页面完全一致的 logo 样式 */
+    .logo{
+      height:40px;
+      width:auto;
+      vertical-align:-8px;
+      margin-right:10px;
+    }
+
     .subhead{margin:0; font-size: 18px; opacity:.9;}
     main{padding: 28px 20px 60px;}
     section{
@@ -66,6 +75,8 @@
     }
     @media (max-width: 760px){
       .grid2{grid-template-columns:1fr;}
+      h1{font-size:34px;}
+      .logo{height:34px; vertical-align:-6px;}
     }
     .links a{
       display:inline-block;
@@ -110,15 +121,27 @@
 <body>
   <header>
     <div class="wrap">
-      <h1 data-lang="en">Compliance &amp; Trust</h1>
-      <h1 data-lang="zh" style="display:none">合规与信任</h1>
-      <h1 data-lang="hu" style="display:none">Megfelelőség &amp; Bizalom</h1>
+      <h1 data-lang="en">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Compliance &amp; Trust
+      </h1>
+      <h1 data-lang="zh" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        合规与信任
+      </h1>
+      <h1 data-lang="hu" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Megfelelőség &amp; Bizalom
+      </h1>
 
       <p class="subhead" data-lang="en">SinoWellJourneys – A Compliant EU Travel Organiser Platform</p>
       <p class="subhead" data-lang="zh" style="display:none">SinoWellJourneys —— 合规的欧盟旅行组织平台</p>
       <p class="subhead" data-lang="hu" style="display:none">SinoWellJourneys – Megfelelő EU-s utazásszervező platform</p>
     </div>
   </header>
+</body>
+</html>
+
 
   <main class="wrap">
 <!-- ===== Back to Home (Top) ===== -->
