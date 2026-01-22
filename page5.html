@@ -20,6 +20,15 @@
     }
     .wrap{max-width: 980px; margin: 0 auto;}
     h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+
+    /* ===== LOGO 尺寸（已按你要求修改） ===== */
+    .logo{
+      height:56px;
+      width:auto;
+      vertical-align:-10px;
+      margin-right:12px;
+    }
+
     .subhead{margin:0; font-size: 18px; opacity:.9;}
     main{padding: 28px 20px 60px;}
     section{
@@ -64,9 +73,17 @@
       gap: 14px;
       margin-top: 10px;
     }
+
+    /* ===== 手机端 LOGO 参数（已按你要求修改） ===== */
     @media (max-width: 760px){
       .grid2{grid-template-columns:1fr;}
+      h1{font-size:34px;}
+      .logo{
+        height:48px;
+        vertical-align:-8px;
+      }
     }
+
     .links a{
       display:inline-block;
       margin: 6px 10px 0 0;
@@ -84,7 +101,6 @@
       text-align:center;
     }
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-    /* 邮箱链接蓝色 */
     a{color:#2563eb;}
   </style>
 
@@ -106,6 +122,32 @@
     });
   </script>
 </head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1 data-lang="en">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        FAQ
+      </h1>
+      <h1 data-lang="zh" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        常见问题
+      </h1>
+      <h1 data-lang="hu" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Gyakori kérdések
+      </h1>
+
+      <p class="subhead" data-lang="en">Frequently Asked Questions</p>
+      <p class="subhead" data-lang="zh" style="display:none">常见问题解答</p>
+      <p class="subhead" data-lang="hu" style="display:none">Gyakran ismételt kérdések</p>
+    </div>
+  </header>
+
+</body>
+</html>
+
 
 <body>
   <header>
