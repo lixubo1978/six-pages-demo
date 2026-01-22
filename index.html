@@ -33,6 +33,7 @@
     h2{margin: 0 0 10px 0; font-size: 22px;}
     h3{margin: 14px 0 6px; font-size: 18px;}
     ul{margin: 8px 0 0 20px;}
+    ol{margin: 8px 0 0 20px;}
     .note{
       background:#f3f6ff;
       border: 1px solid #dfe7ff;
@@ -112,7 +113,7 @@
       color:#fff;
       text-decoration:none;
       font-size:16px;
-      font-weight:600; 
+      font-weight:600;
       line-height:1;
       transition: transform .08s ease, background .15s ease, border-color .15s ease;
       white-space:nowrap;
@@ -125,9 +126,8 @@
     .pill:active{ transform: translateY(0px); }
     .pill small{
       opacity:.85;
-      font-size:1px;
+      font-size:12px; /* 原来是 1px，会看不见；这里修复成可读 */
       font-weight:500;
-      opacity:.85;
       letter-spacing:.3px;
     }
     .pill.is-current{
@@ -137,27 +137,38 @@
     }
     .pill.is-current small{opacity:.7;}
 
-       }
-    /* ===== Site Logo ===== */
+    /* ===== Site Logo (keep logo + title in ONE LINE) ===== */
     .site-logo{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin-bottom: 12px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom: 12px;
+      flex-wrap: nowrap;        /* 不换行 */
     }
-
     .site-logo img{
-    height:56px;          /* 桌面端 */
-    width:auto;
+      height:56px;              /* 桌面端 */
+      width:auto;
+      display:block;
+      flex: 0 0 auto;
     }
+    .site-title{
+      display:flex;
+      align-items:center;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+    .site-title h1{
+      margin:0;                 /* 去掉默认 margin，避免看起来“分两行” */
+      line-height: 1.15;
+      white-space: nowrap;      /* 标题不换行 */
+    }
+
     @media (max-width:760px){
-    .pill{padding:10px 12px;}
-    header{padding: 44px 16px;}
-    .langbar{right:16px;}
-
-        /* 手机端 */
-    
-
+      .pill{padding:10px 12px;}
+      header{padding: 44px 16px;}
+      .langbar{right:16px;}
+      .site-logo img{height:44px;}
+    }
   </style>
 
   <script>
@@ -207,18 +218,14 @@
 
     <div class="wrap">
 
-    <div class="site-logo">
-
-    <img src="assets/logo.png" alt="SinoWellJourneys Logo">
-
-    <div class="site-title">
-      <h1 data-lang="en">SinoWellJourneys</h1>
-      <h1 data-lang="zh" style="display:none">SinoWellJourneys</h1>
-      <h1 data-lang="hu" style="display:none">SinoWellJourneys</h1>
-    </div>
-
-</div>
-
+      <div class="site-logo">
+        <img src="assets/logo.png" alt="SinoWellJourneys Logo">
+        <div class="site-title">
+          <h1 data-lang="en">SinoWellJourneys</h1>
+          <h1 data-lang="zh" style="display:none">SinoWellJourneys</h1>
+          <h1 data-lang="hu" style="display:none">SinoWellJourneys</h1>
+        </div>
+      </div>
 
       <p class="subhead" data-lang="en">
         Curated China Cultural &amp; Wellness Programs for EU Travel Agencies
@@ -229,7 +236,6 @@
       <p class="subhead" data-lang="hu" style="display:none">
         Kínai kulturális és wellness utazási programok európai utazási irodák számára
       </p>
-
       <!-- ✅ Top Navigation (replaces "Other Pages") -->
       <div class="topnav">
         <!-- EN -->
