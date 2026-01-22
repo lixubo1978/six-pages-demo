@@ -137,11 +137,27 @@
     }
     .pill.is-current small{opacity:.7;}
 
-    @media (max-width:760px){
-      .pill{padding:10px 12px;}
-      header{padding: 44px 16px;}
-      .langbar{right:16px;}
+       }
+    /* ===== Site Logo ===== */
+    .site-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom: 12px;
     }
+
+    .site-logo img{
+    height:56px;          /* 桌面端 */
+    width:auto;
+    }
+    @media (max-width:760px){
+    .pill{padding:10px 12px;}
+    header{padding: 44px 16px;}
+    .langbar{right:16px;}
+
+        /* 手机端 */
+    
+
   </style>
 
   <script>
