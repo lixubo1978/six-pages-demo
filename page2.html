@@ -1,11 +1,453 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>页面二</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discover China | SinoWellJourneys</title>
+
+  <style>
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      color:#111;
+      background:#fafafa;
+    }
+    header{
+      background:#0b1220;
+      color:#fff;
+      padding: 48px 20px;
+    }
+    .wrap{max-width: 980px; margin: 0 auto;}
+    h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+    .subhead{margin:0; font-size: 18px; opacity:.9;}
+    main{padding: 28px 20px 60px;}
+    section{
+      background:#fff;
+      border: 1px solid #eaeaea;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    h2{margin: 0 0 10px 0; font-size: 22px;}
+    h3{margin: 14px 0 6px; font-size: 18px;}
+    ul,ol{margin: 8px 0 0 20px;}
+    .note{
+      background:#f3f6ff;
+      border: 1px solid #dfe7ff;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+    .program{
+      padding: 12px 14px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      margin: 10px 0;
+      background:#fcfcfc;
+    }
+    .program b{display:block; font-size: 16px; margin-bottom: 4px;}
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    @media (max-width: 760px){
+      .grid2{grid-template-columns:1fr;}
+    }
+    .links a{
+      display:inline-block;
+      margin: 6px 10px 0 0;
+      padding: 8px 12px;
+      border:1px solid #e6e6e6;
+      border-radius: 999px;
+      text-decoration:none;
+      color:#111;
+      background:#fff;
+    }
+    .links a:hover{border-color:#cfcfcf;}
+    footer{
+      padding: 18px 20px 30px;
+      color:#666;
+      text-align:center;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    a{color:#111;}
+  </style>
+
+  <script>
+    const LANG_KEY = 'swj_lang';
+
+    function applyLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      document.documentElement.lang = lang;
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+      let lang = 'en';
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      if(!['en','zh','hu'].includes(lang)) lang = 'en';
+      applyLang(lang);
+    });
+  </script>
 </head>
+
 <body>
-  <h1>这是页面二</h1>
-  <p><a href="index.html">返回首页</a></p>
+  <header>
+    <div class="wrap">
+      <h1 data-lang="en">🌏 Discover China with SinoWellJourneys</h1>
+      <h1 data-lang="zh" style="display:none">🌏 与 SinoWellJourneys 一起探索中国</h1>
+      <h1 data-lang="hu" style="display:none">🌏 Fedezze fel Kínát a SinoWellJourneys-szel</h1>
+
+      <p class="subhead" data-lang="en">Culture, Wellness and Authentic Experiences – Delivered by Trusted Partners</p>
+      <p class="subhead" data-lang="zh" style="display:none">文化 · 康养 · 真实体验 —— 由可信合作伙伴交付</p>
+      <p class="subhead" data-lang="hu" style="display:none">Kultúra, wellness és autentikus élmények – megbízható partnerektől</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ================= EN ================= -->
+    <div data-lang="en">
+      <section>
+        <p>
+          SinoWellJourneys curates premium China cultural and wellness journeys for travellers in Hungary and across Europe.
+          Our programs are sold and operated through licensed Hungarian travel agencies and delivered by trusted Chinese travel and medical partners.
+        </p>
+        <div class="note">
+          SinoWellJourneys does not sell directly to travellers. Bookings are made via authorised travel agency partners.
+        </div>
+      </section>
+
+      <section>
+        <h2>Why China with SinoWellJourneys?</h2>
+        <p>
+          China is one of the world’s richest cultural destinations — but it can also be complex and overwhelming.
+          SinoWellJourneys was created to make China:
+        </p>
+        <ul>
+          <li>Easy to explore</li>
+          <li>Safe to travel</li>
+          <li>And truly authentic</li>
+        </ul>
+
+        <h3>We combine:</h3>
+        <ul>
+          <li>Cultural heritage</li>
+          <li>Modern wellness &amp; health screening</li>
+          <li>Professional travel services</li>
+        </ul>
+
+        <p class="note">…into one seamless experience.</p>
+      </section>
+
+      <section>
+        <h2>Our Signature Programs</h2>
+
+        <div class="program">
+          <b>C7 – China Culture Discovery</b>
+          A 7-day introduction to China’s history, cities and traditions.
+        </div>
+
+        <div class="program">
+          <b>C10 – China Culture &amp; Wellness</b>
+          Our flagship 10-day experience combining cultural travel with professional health and wellness services.
+        </div>
+
+        <div class="program">
+          <b>C14 – China Deep Experience</b>
+          A 14-day immersive journey for travellers seeking deeper cultural and wellness exploration.
+        </div>
+
+        <p class="note">
+          Each program is carefully designed and delivered by licensed Chinese travel agencies and medical institutions.
+        </p>
+      </section>
+
+      <section>
+        <h2>What’s Included</h2>
+        <p>Depending on your program, you may enjoy:</p>
+        <ul>
+          <li>4–5 star hotels</li>
+          <li>Private transport and professional guides</li>
+          <li>Cultural sites and experiences</li>
+          <li>Wellness and health screening at licensed medical centres</li>
+          <li>Full local support in China</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>How Booking Works</h2>
+        <p>SinoWellJourneys does not sell directly to travellers.</p>
+        <p>To ensure full EU consumer protection and professional service:</p>
+        <ol>
+          <li>You book through an authorised Hungarian travel agency</li>
+          <li>Your agency handles payment, customer service and travel protection</li>
+          <li>SinoWellJourneys organises and coordinates the China program</li>
+          <li>Licensed Chinese partners deliver your experience</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Safety &amp; Trust</h2>
+        <p>All our China programs are delivered by:</p>
+        <ul>
+          <li>Licensed Chinese travel agencies</li>
+          <li>Licensed medical and wellness institutions</li>
+        </ul>
+        <p class="note">
+          We work only with professional partners who meet strict legal and quality requirements.
+        </p>
+      </section>
+
+      <section>
+        <h2>Book Through Our Partners</h2>
+        <p>
+          To explore availability and prices, please contact us. We will connect you with a trusted local travel agency partner:
+        </p>
+        <p>📧 <a href="mailto:market@sinowelljourneys.com">market@sinowelljourneys.com</a></p>
+
+        <div class="links">
+          <a href="index.html">Back to Home</a>
+          <a href="page1.html">Page1</a>
+          <a href="page2.html">Page2</a>
+          <a href="page4.html">Page4</a>
+          <a href="page5.html">Page5</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= 中文 ================= -->
+    <div data-lang="zh" style="display:none">
+      <section>
+        <p>
+          SinoWellJourneys 为匈牙利及欧洲各地旅客策划高端的中国文化与康养之旅。
+          我们的项目通过匈牙利持牌旅行社进行销售与运营，并由可信的中国旅行与医疗合作伙伴完成交付。
+        </p>
+        <div class="note">
+          SinoWellJourneys 不直接向旅客销售。预订将通过授权旅行社合作伙伴完成。
+        </div>
+      </section>
+
+      <section>
+        <h2>为什么选择 SinoWellJourneys 的中国之旅？</h2>
+        <p>
+          中国拥有世界级的文化资源，但行程组织也可能复杂、信息量大、容易让人无从下手。
+          SinoWellJourneys 的使命是让中国：
+        </p>
+        <ul>
+          <li>更容易探索</li>
+          <li>更安心出行</li>
+          <li>更真实、更有深度</li>
+        </ul>
+
+        <h3>我们将以下内容融合为一体：</h3>
+        <ul>
+          <li>文化遗产与城市体验</li>
+          <li>现代康养与健康筛查</li>
+          <li>专业旅行服务</li>
+        </ul>
+
+        <p class="note">形成一套无缝衔接的一站式体验。</p>
+      </section>
+
+      <section>
+        <h2>我们的旗舰项目</h2>
+
+        <div class="program">
+          <b>C7 – 中国文化探索</b>
+          7 天游览入门：历史、城市与传统文化。
+        </div>
+
+        <div class="program">
+          <b>C10 – 中国文化与康养</b>
+          10 天旗舰体验：文化旅行 + 专业康养与健康服务。
+        </div>
+
+        <div class="program">
+          <b>C14 – 中国深度体验</b>
+          14 天沉浸式行程：适合追求更深入文化与康养探索的旅客。
+        </div>
+
+        <p class="note">
+          每个项目均由具备资质的中国旅行社与医疗机构精心设计并交付。
+        </p>
+      </section>
+
+      <section>
+        <h2>包含内容</h2>
+        <p>根据您选择的项目，您可能享受：</p>
+        <ul>
+          <li>4–5 星级酒店</li>
+          <li>专车接送与专业导游</li>
+          <li>文化景点与特色体验</li>
+          <li>在持牌医疗中心进行康养与健康筛查</li>
+          <li>中国境内全程落地支持</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>预订流程</h2>
+        <p>SinoWellJourneys 不直接向旅客销售。</p>
+        <p>为确保欧盟消费者保护与专业服务交付：</p>
+        <ol>
+          <li>您通过授权的匈牙利旅行社进行预订</li>
+          <li>旅行社负责收款、客服与旅行保障</li>
+          <li>SinoWellJourneys 统筹并协调中国行程</li>
+          <li>中国持牌合作伙伴完成体验交付</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>安全与信任</h2>
+        <p>所有中国项目由以下主体交付：</p>
+        <ul>
+          <li>具备资质的中国旅行社</li>
+          <li>具备资质的医疗与康养机构</li>
+        </ul>
+        <p class="note">
+          我们仅与满足严格法律与质量标准的专业合作伙伴合作。
+        </p>
+      </section>
+
+      <section>
+        <h2>通过合作伙伴预订</h2>
+        <p>
+          如需了解档期与价格，请联系我们。我们将为您对接可信的本地旅行社合作伙伴：
+        </p>
+        <p>📧 <a href="mailto:market@sinowelljourneys.com">market@sinowelljourneys.com</a></p>
+
+        <div class="links">
+          <a href="index.html">返回首页</a>
+          <a href="page1.html">Page1</a>
+          <a href="page2.html">Page2</a>
+          <a href="page4.html">Page4</a>
+          <a href="page5.html">Page5</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= HU ================= -->
+    <div data-lang="hu" style="display:none">
+      <section>
+        <p>
+          A SinoWellJourneys prémium kínai kulturális és wellness utazásokat állít össze Magyarországon és Európa-szerte utazók számára.
+          Programjainkat engedéllyel rendelkező magyar utazási irodák értékesítik és üzemeltetik, a szolgáltatásokat pedig megbízható kínai utazási és egészségügyi partnerek nyújtják.
+        </p>
+        <div class="note">
+          A SinoWellJourneys nem értékesít közvetlenül az utazók részére. A foglalás engedélyezett utazási irodai partnereinken keresztül történik.
+        </div>
+      </section>
+
+      <section>
+        <h2>Miért Kína a SinoWellJourneys-szel?</h2>
+        <p>
+          Kína a világ egyik leggazdagabb kulturális úti célja — ugyanakkor összetett és könnyen túlterhelő is lehet.
+          A SinoWellJourneys azért jött létre, hogy Kína:
+        </p>
+        <ul>
+          <li>könnyen felfedezhető legyen</li>
+          <li>biztonságos utazást nyújtson</li>
+          <li>és valóban autentikus élményt adjon</li>
+        </ul>
+
+        <h3>Egyesítjük:</h3>
+        <ul>
+          <li>kulturális örökséget</li>
+          <li>modern wellness-t és egészségügyi szűrést</li>
+          <li>professzionális utazási szolgáltatásokat</li>
+        </ul>
+
+        <p class="note">…egy zökkenőmentes, egységes élményben.</p>
+      </section>
+
+      <section>
+        <h2>Kiemelt programjaink</h2>
+
+        <div class="program">
+          <b>C7 – Kína kulturális felfedezése</b>
+          7 napos bevezető Kína történelmébe, városaiba és hagyományaiba.
+        </div>
+
+        <div class="program">
+          <b>C10 – Kína kultúra &amp; wellness</b>
+          10 napos zászlóshajó élmény: kulturális utazás professzionális wellness és egészségügyi szolgáltatásokkal.
+        </div>
+
+        <div class="program">
+          <b>C14 – Kína mélyélmény</b>
+          14 napos, elmélyült utazás a mélyebb kulturális és wellness felfedezéshez.
+        </div>
+
+        <p class="note">
+          Minden programot engedéllyel rendelkező kínai utazási irodák és egészségügyi intézmények terveznek és valósítanak meg.
+        </p>
+      </section>
+
+      <section>
+        <h2>Mit tartalmaz</h2>
+        <p>A választott programtól függően az alábbiakat élvezheti:</p>
+        <ul>
+          <li>4–5 csillagos szállodák</li>
+          <li>Privát közlekedés és professzionális idegenvezetők</li>
+          <li>Kulturális helyszínek és élmények</li>
+          <li>Wellness és egészségügyi szűrés engedéllyel rendelkező központokban</li>
+          <li>Teljes körű helyi támogatás Kínában</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Foglalás menete</h2>
+        <p>A SinoWellJourneys nem értékesít közvetlenül az utazók részére.</p>
+        <p>Az EU fogyasztóvédelmi megfelelőség és professzionális szolgáltatás érdekében:</p>
+        <ol>
+          <li>Engedélyezett magyar utazási irodán keresztül foglal</li>
+          <li>Az iroda kezeli a fizetést, ügyfélszolgálatot és az utazásvédelmet</li>
+          <li>A SinoWellJourneys megszervezi és koordinálja a kínai programot</li>
+          <li>Engedéllyel rendelkező kínai partnerek nyújtják az élményt</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Biztonság és bizalom</h2>
+        <p>Kínai programjainkat az alábbi partnerek valósítják meg:</p>
+        <ul>
+          <li>Engedéllyel rendelkező kínai utazási irodák</li>
+          <li>Engedéllyel rendelkező egészségügyi és wellness intézmények</li>
+        </ul>
+        <p class="note">
+          Kizárólag olyan professzionális partnerekkel dolgozunk, akik szigorú jogi és minőségi követelményeknek felelnek meg.
+        </p>
+      </section>
+
+      <section>
+        <h2>Foglaljon partnereinken keresztül</h2>
+        <p>
+          Elérhetőség és árak kapcsán kérjük, vegye fel velünk a kapcsolatot.
+          Összekötjük egy megbízható helyi utazási iroda partnerrel:
+        </p>
+        <p>📧 <a href="mailto:market@sinowelljourneys.com">market@sinowelljourneys.com</a></p>
+
+        <div class="links">
+          <a href="index.html">Vissza a főoldalra</a>
+          <a href="page1.html">Page1</a>
+          <a href="page2.html">Page2</a>
+          <a href="page4.html">Page4</a>
+          <a href="page5.html">Page5</a>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="mono">©</span> SinoWellJourneys
+    </div>
+  </footer>
 </body>
 </html>
