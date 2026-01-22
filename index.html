@@ -91,25 +91,40 @@
   </style>
 
   <script>
-    function setLang(lang){
-      // toggle all language blocks
-      document.querySelectorAll('[data-lang]').forEach(el=>{
-        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
-      });
+  const LANG_KEY = 'swj_lang';
 
-      // button state
-      document.querySelectorAll('.langbar button').forEach(btn=>{
-        btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
-      });
+  function setLang(lang){
+    // 1) persist selection so other pages can inherit it
+    try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
 
-      // html lang attribute
-      document.documentElement.lang = lang;
-    }
-
-    window.addEventListener('DOMContentLoaded', function(){
-      setLang('en'); // default
+    // 2) toggle all language blocks
+    document.querySelectorAll('[data-lang]').forEach(el=>{
+      el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
     });
-  </script>
+
+    // 3) button state
+    document.querySelectorAll('.langbar button').forEach(btn=>{
+      btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+    });
+
+    // 4) html lang attribute
+    document.documentElement.lang = lang;
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    // restore last selection, fallback to EN
+    let lang = 'en';
+    try {
+      lang = localStorage.getItem(LANG_KEY) || 'en';
+    } catch(e) {}
+
+    // safety fallback if stored value is unexpected
+    if(!['en','zh','hu'].includes(lang)) lang = 'en';
+
+    setLang(lang);
+  });
+</script>
+
 </head>
 
 <body>
