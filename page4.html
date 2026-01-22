@@ -1,11 +1,415 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>页面四</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About SinoWellJourneys | SinoWellJourneys</title>
+
+  <style>
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      color:#111;
+      background:#fafafa;
+    }
+    header{
+      background:#0b1220;
+      color:#fff;
+      padding: 48px 20px;
+    }
+    .wrap{max-width: 980px; margin: 0 auto;}
+    h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+    .subhead{margin:0; font-size: 18px; opacity:.9;}
+    main{padding: 28px 20px 60px;}
+    section{
+      background:#fff;
+      border: 1px solid #eaeaea;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    h2{margin: 0 0 10px 0; font-size: 22px;}
+    h3{margin: 14px 0 6px; font-size: 18px;}
+    ul,ol{margin: 8px 0 0 20px;}
+    .note{
+      background:#f3f6ff;
+      border: 1px solid #dfe7ff;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      background:#fff;
+    }
+    th, td{
+      text-align:left;
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    th{background:#fafafa;}
+    tr:last-child td{border-bottom:none;}
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    @media (max-width: 760px){
+      .grid2{grid-template-columns:1fr;}
+    }
+    .links a{
+      display:inline-block;
+      margin: 6px 10px 0 0;
+      padding: 8px 12px;
+      border:1px solid #e6e6e6;
+      border-radius: 999px;
+      text-decoration:none;
+      color:#111;
+      background:#fff;
+    }
+    .links a:hover{border-color:#cfcfcf;}
+    footer{
+      padding: 18px 20px 30px;
+      color:#666;
+      text-align:center;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    /* 邮箱链接蓝色 */
+    a{color:#2563eb;}
+  </style>
+
+  <script>
+    const LANG_KEY = 'swj_lang';
+
+    function applyLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      document.documentElement.lang = lang;
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+      let lang = 'en';
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      if(!['en','zh','hu'].includes(lang)) lang = 'en';
+      applyLang(lang);
+    });
+  </script>
 </head>
+
 <body>
-  <h1>这是页面四</h1>
-  <p><a href="index.html">返回首页</a></p>
+  <header>
+    <div class="wrap">
+      <h1 data-lang="en">About SinoWellJourneys</h1>
+      <h1 data-lang="zh" style="display:none">关于 SinoWellJourneys</h1>
+      <h1 data-lang="hu" style="display:none">A SinoWellJourneysről</h1>
+
+      <p class="subhead" data-lang="en">Bridging Europe and China Through Culture and Wellness</p>
+      <p class="subhead" data-lang="zh" style="display:none">以文化与康养连接欧洲与中国</p>
+      <p class="subhead" data-lang="hu" style="display:none">Európa és Kína összekapcsolása kultúrán és wellnesen keresztül</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ================= EN ================= -->
+    <div data-lang="en">
+      <section>
+        <p>
+          SinoWellJourneys is an EU-based travel organiser dedicated to connecting European travellers with authentic Chinese cultural and wellness experiences.
+          We operate as a professional product and programme platform, working with licensed travel agencies in Europe and licensed service providers in China.
+        </p>
+      </section>
+
+      <section>
+        <h2>Who We Are</h2>
+        <p>
+          SinoWellJourneys is operated by <b>Magyor Well-Chi Travel Platform Kft</b>, a company registered in Budapest, Hungary.
+        </p>
+        <p>We specialise in:</p>
+        <ul>
+          <li>Designing China cultural and wellness travel programmes</li>
+          <li>Coordinating licensed travel and medical service providers</li>
+          <li>Supporting European travel agencies with high-quality long-haul products</li>
+        </ul>
+        <p class="note">
+          We do not sell directly to travellers. All customer sales are handled by our authorised retail travel partners.
+        </p>
+      </section>
+
+      <section>
+        <h2>Our Mission</h2>
+        <p>Our mission is to make China accessible, safe and inspiring for European travellers.</p>
+        <p>We believe that:</p>
+        <ul>
+          <li>Cultural exchange builds understanding</li>
+          <li>Professional wellness and health services enhance travel</li>
+          <li>Strong partnerships create the best experiences</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Our Network</h2>
+        <p>SinoWellJourneys works with a growing network of:</p>
+        <ul>
+          <li>Licensed Chinese travel agencies</li>
+          <li>Licensed Chinese medical and wellness centres</li>
+          <li>Hotels, transport providers and professional guides</li>
+          <li>European retail travel agencies</li>
+        </ul>
+        <p class="note">
+          Each partner is selected based on legal compliance, quality standards and long-term reliability.
+        </p>
+      </section>
+
+      <section>
+        <h2>Our Standards</h2>
+        <p>We apply strict standards across all programmes:</p>
+        <ul>
+          <li>Licensed and audited suppliers</li>
+          <li>Contract-based service delivery</li>
+          <li>Clear pricing and transparent billing</li>
+          <li>Professional customer support via our agency partners</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Our Role</h2>
+        <p>SinoWellJourneys acts as:</p>
+        <ul>
+          <li>A travel organiser</li>
+          <li>A wholesale product provider</li>
+          <li>A cross-border service coordinator</li>
+        </ul>
+        <p>We do not act as:</p>
+        <ul>
+          <li>A retail travel agency</li>
+          <li>An online booking platform</li>
+          <li>A medical provider</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Our Location</h2>
+        <p>
+          SinoWellJourneys operates from Budapest, Hungary, serving travel agencies and travellers across Europe.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">Back to Home</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= 中文 ================= -->
+    <div data-lang="zh" style="display:none">
+      <section>
+        <p>
+          SinoWellJourneys 是一家欧盟旅行组织方，致力于将欧洲旅客与真实的中国文化与康养体验连接起来。
+          我们作为专业产品与项目平台运营，与欧洲持牌旅行社以及中国持牌服务提供方合作。
+        </p>
+      </section>
+
+      <section>
+        <h2>我们是谁</h2>
+        <p>
+          SinoWellJourneys 由注册于匈牙利布达佩斯的 <b>Magyor Well-Chi Travel Platform Kft</b> 运营。
+        </p>
+        <p>我们专注于：</p>
+        <ul>
+          <li>设计中国文化与康养旅行项目</li>
+          <li>协调具备资质的旅行与医疗服务提供方</li>
+          <li>为欧洲旅行社提供高质量长线产品支持</li>
+        </ul>
+        <p class="note">
+          我们不直接向旅客销售。所有客户销售均由授权零售旅行社伙伴完成。
+        </p>
+      </section>
+
+      <section>
+        <h2>我们的使命</h2>
+        <p>我们的使命是让中国对欧洲旅客而言更易达、更安全、更具启发性。</p>
+        <p>我们相信：</p>
+        <ul>
+          <li>文化交流促进理解</li>
+          <li>专业康养与健康服务提升旅行体验</li>
+          <li>稳固合作伙伴关系创造最佳体验</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>我们的网络</h2>
+        <p>SinoWellJourneys 与不断扩展的合作网络共同工作，包括：</p>
+        <ul>
+          <li>持牌中国旅行社</li>
+          <li>持牌中国医疗与康养中心</li>
+          <li>酒店、交通服务商与专业导游</li>
+          <li>欧洲零售旅行社</li>
+        </ul>
+        <p class="note">
+          每位合作伙伴均基于合规资质、质量标准与长期可靠性筛选。
+        </p>
+      </section>
+
+      <section>
+        <h2>我们的标准</h2>
+        <p>我们对所有项目执行严格标准：</p>
+        <ul>
+          <li>供应商具备资质并可审计</li>
+          <li>基于合同的服务交付</li>
+          <li>清晰定价与透明结算</li>
+          <li>通过旅行社伙伴提供专业客户支持</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>我们的角色</h2>
+        <p>SinoWellJourneys 的角色包括：</p>
+        <ul>
+          <li>旅行组织方</li>
+          <li>批发产品提供方</li>
+          <li>跨境服务协调方</li>
+        </ul>
+        <p>我们不属于：</p>
+        <ul>
+          <li>零售旅行社</li>
+          <li>在线预订平台</li>
+          <li>医疗服务提供方</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>所在地</h2>
+        <p>
+          SinoWellJourneys 在匈牙利布达佩斯运营，服务欧洲各地旅行社与旅客。
+        </p>
+      </section>
+
+      <section>
+        <h2>联系</h2>
+        <p>📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">返回首页</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= HU ================= -->
+    <div data-lang="hu" style="display:none">
+      <section>
+        <p>
+          A SinoWellJourneys egy EU-alapú utazásszervező, amelynek célja, hogy európai utazókat kössön össze autentikus kínai kulturális és wellness élményekkel.
+          Professzionális termék- és programplatformként működünk, európai engedéllyel rendelkező utazási irodákkal és kínai engedéllyel rendelkező szolgáltatókkal együttműködve.
+        </p>
+      </section>
+
+      <section>
+        <h2>Kik vagyunk</h2>
+        <p>
+          A SinoWellJourneys működtetője a <b>Magyor Well-Chi Travel Platform Kft</b>, amely Budapesten, Magyarországon bejegyzett vállalat.
+        </p>
+        <p>Szakterületünk:</p>
+        <ul>
+          <li>Kínai kulturális és wellness utazási programok tervezése</li>
+          <li>Engedéllyel rendelkező utazási és egészségügyi szolgáltatók koordinálása</li>
+          <li>Európai utazási irodák támogatása magas minőségű, hosszú távú termékekkel</li>
+        </ul>
+        <p class="note">
+          Nem értékesítünk közvetlenül az utazóknak. Minden ügyfélértékesítést felhatalmazott kiskereskedelmi partnereink kezelnek.
+        </p>
+      </section>
+
+      <section>
+        <h2>Küldetésünk</h2>
+        <p>Célunk, hogy Kína elérhető, biztonságos és inspiráló legyen az európai utazók számára.</p>
+        <p>Hiszünk abban, hogy:</p>
+        <ul>
+          <li>A kulturális csere megértést épít</li>
+          <li>A professzionális wellness és egészségügyi szolgáltatások gazdagítják az utazást</li>
+          <li>Az erős partnerségek hozzák a legjobb élményeket</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Partnerhálózatunk</h2>
+        <p>A SinoWellJourneys egy növekvő hálózattal dolgozik együtt, amelybe tartozik:</p>
+        <ul>
+          <li>Engedéllyel rendelkező kínai utazási irodák</li>
+          <li>Engedéllyel rendelkező kínai orvosi és wellness központok</li>
+          <li>Szállodák, közlekedési szolgáltatók és professzionális idegenvezetők</li>
+          <li>Európai kiskereskedelmi utazási irodák</li>
+        </ul>
+        <p class="note">
+          Minden partnert jogi megfelelőség, minőségi standardok és hosszú távú megbízhatóság alapján választunk ki.
+        </p>
+      </section>
+
+      <section>
+        <h2>Standardjaink</h2>
+        <p>Szigorú elvárásokat alkalmazunk minden program esetében:</p>
+        <ul>
+          <li>Engedéllyel rendelkező és auditálható beszállítók</li>
+          <li>Szerződésalapú szolgáltatásnyújtás</li>
+          <li>Egyértelmű árképzés és átlátható számlázás</li>
+          <li>Professzionális ügyféltámogatás ügynökségi partnereinken keresztül</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Szerepünk</h2>
+        <p>A SinoWellJourneys szerepe:</p>
+        <ul>
+          <li>Utazásszervező</li>
+          <li>Nagykereskedelmi termékszolgáltató</li>
+          <li>Határokon átnyúló szolgáltatáskoordinátor</li>
+        </ul>
+        <p>Nem vagyunk:</p>
+        <ul>
+          <li>Kiskereskedelmi utazási iroda</li>
+          <li>Online foglalási platform</li>
+          <li>Egészségügyi szolgáltató</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Helyszín</h2>
+        <p>
+          A SinoWellJourneys Budapestről, Magyarországról működik, és európai utazási irodákat és utazókat szolgál ki.
+        </p>
+      </section>
+
+      <section>
+        <h2>Kapcsolat</h2>
+        <p>📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">Vissza a főoldalra</a>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="mono">©</span> SinoWellJourneys
+    </div>
+  </footer>
 </body>
 </html>
