@@ -19,7 +19,18 @@
       padding: 48px 20px;
     }
     .wrap{max-width: 980px; margin: 0 auto;}
-    h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+    h1{
+      margin:0 0 10px 0;
+      font-size: 40px;
+      letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .logo{
+      height:42px;
+      width:auto;
+    }
     .subhead{margin:0; font-size: 18px; opacity:.9;}
     main{padding: 28px 20px 60px;}
     section{
@@ -109,15 +120,26 @@
 <body>
   <header>
     <div class="wrap">
-      <h1 data-lang="en">🌍 For Travel Agencies</h1>
-      <h1 data-lang="zh" style="display:none">🌍 面向旅行社</h1>
-      <h1 data-lang="hu" style="display:none">🌍 Utazási irodáknak</h1>
+      <h1 data-lang="en">
+        <img src="logo.png" alt="SinoWellJourneys" class="logo">
+        For Travel Agencies
+      </h1>
+      <h1 data-lang="zh" style="display:none">
+        <img src="logo.png" alt="SinoWellJourneys" class="logo">
+        面向旅行社
+      </h1>
+      <h1 data-lang="hu" style="display:none">
+        <img src="logo.png" alt="SinoWellJourneys" class="logo">
+        Utazási irodáknak
+      </h1>
 
       <p class="subhead" data-lang="en">Sell Premium China Experiences. We Handle the Complexity.</p>
       <p class="subhead" data-lang="zh" style="display:none">高端中国旅行体验，我们负责复杂部分</p>
       <p class="subhead" data-lang="hu" style="display:none">Prémium kínai élmények. A komplexitást mi kezeljük.</p>
     </div>
   </header>
+
+
 
   <main class="wrap">
 <!-- ===== Back to Home (Top) ===== -->
