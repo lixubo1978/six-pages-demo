@@ -6,407 +6,351 @@
   <title>Discover China | SinowellJourneys</title>
   <meta name="description" content="Discover China with SinowellJourneys — culture, wellness, and authentic experiences delivered by trusted partners." />
 
+  <!--
+    说明：
+    1) 本页不提供语言切换按钮（完全继承 index 的语言状态）；
+    2) 样式尽量轻量，优先让 index 的全局 CSS 接管外观；
+    3) 本页不输出任何分页导航（避免出现 page1/3/4/5）。
+  -->
   <style>
+    /* 轻量排版：不“装修”，尽量让首页全局 CSS 继承 */
     :root{
-      --bg:#ffffff;
-      --fg:#111827;
-      --muted:#6b7280;
-      --card:#f9fafb;
-      --border:#e5e7eb;
-      --link:#2563eb;
-      --max: 920px;
+      --max: 980px;
+      --border: #e5e7eb;
+      --muted: #6b7280;
     }
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--fg);
-      background:var(--bg);
       line-height:1.6;
-    }
-    header{
-      border-bottom:1px solid var(--border);
-      background: #fff;
-      position: sticky;
-      top:0;
-      z-index:10;
-    }
-    .wrap{max-width:var(--max); margin:0 auto; padding: 14px 18px;}
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .brand{
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    .lang{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .lang button{
-      border:1px solid var(--border);
       background:#fff;
-      padding:8px 10px;
-      border-radius:10px;
-      cursor:pointer;
+      color:#111827;
+    }
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px;
+    }
+    h1{ margin: 8px 0 6px; font-size: 28px; line-height:1.2; }
+    h2{ margin: 20px 0 8px; font-size: 18px; }
+    p{ margin: 10px 0; }
+    ul,ol{ margin: 10px 0 0 18px; }
+    .subtitle{ color: var(--muted); margin: 0 0 14px; }
+    .muted{ color: var(--muted); }
+    .small{ font-size: 14px; }
+
+    a{ color:#2563eb; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* i18n：只显示当前语言块 */
+    [data-i18n]{ display:none; }
+    [data-i18n].active{ display:block; }
+
+    /* 底部返回首页（位置与 page1 一致：页面最下方仅一个链接） */
+    .footer{
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .back-link{
+      display:inline-block;
       font-weight:600;
-      color:var(--fg);
     }
-    .lang button[aria-pressed="true"]{
-      border-color:#c7d2fe;
-      background:#eef2ff;
-    }
-    main{padding: 26px 18px 50px;}
-    .card{
-      max-width:var(--max);
-      margin:0 auto;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:22px;
-      background:var(--card);
-    }
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .back{display:inline-block; margin-bottom:14px; font-weight:600;}
-    h1{margin:10px 0 6px; font-size:28px; line-height:1.2}
-    .subtitle{color:var(--muted); margin:0 0 18px}
-    h2{margin:22px 0 8px; font-size:18px}
-    ul{margin:10px 0 0 18px}
-    .contact{
-      margin-top:20px;
-      padding-top:18px;
-      border-top:1px dashed var(--border);
-    }
-    .muted{color:var(--muted)}
-    .small{font-size:14px}
-    /* i18n visibility */
-    [data-i18n]{display:none;}
-    [data-i18n].active{display:block;}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="wrap">
-      <div class="topbar">
-        <div class="brand">SinowellJourneys</div>
+  <div class="container">
 
-        <!-- Language switcher (三语) -->
-        <!-- 如果你的首页已有语言切换逻辑：此处会自动读取 localStorage / URL 参数并保持一致 -->
-        <nav class="lang" aria-label="Language">
-          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-          <button type="button" data-set-lang="hu" aria-pressed="false">HU</button>
-          <button type="button" data-set-lang="zh" aria-pressed="false">中文</button>
-        </nav>
-      </div>
+    <!-- EN -->
+    <section data-i18n="en">
+      <h1>🌏 Discover China with SinowellJourneys</h1>
+      <p class="subtitle"><strong>Culture, Wellness and Authentic Experiences</strong> – Delivered by Trusted Partners</p>
+
+      <p>
+        SinowellJourneys curates premium China cultural and wellness journeys for travellers in Hungary and across Europe.
+        Our programs are sold and operated through <strong>licensed Hungarian travel agencies</strong> and delivered by
+        <strong>trusted Chinese travel and medical partners</strong>.
+      </p>
+
+      <h2>Why China with SinowellJourneys?</h2>
+      <p>
+        China is one of the world’s richest cultural destinations — but it can also be complex and overwhelming.
+        SinowellJourneys was created to make China travel:
+      </p>
+      <ul>
+        <li>Easy to explore</li>
+        <li>Safe to travel</li>
+        <li>Truly authentic</li>
+      </ul>
+
+      <p>We combine:</p>
+      <ul>
+        <li>Cultural heritage</li>
+        <li>Modern wellness &amp; health screening</li>
+        <li>Professional travel services</li>
+      </ul>
+      <p>into one seamless experience.</p>
+
+      <h2>Our Signature Programs</h2>
+      <p><strong>C7 – China Culture Discovery</strong><br />A 7-day introduction to China’s history, cities and traditions.</p>
+      <p><strong>C10 – China Culture &amp; Wellness</strong><br />Our flagship 10-day experience combining cultural travel with professional health and wellness services.</p>
+      <p><strong>C14 – China Deep Experience</strong><br />A 14-day immersive journey for travellers seeking deeper cultural and wellness exploration.</p>
+      <p class="muted small">Each program is carefully designed and delivered by licensed Chinese travel agencies and medical institutions.</p>
+
+      <h2>What’s Included</h2>
+      <p>Depending on your program, you may enjoy:</p>
+      <ul>
+        <li>4–5 star hotels</li>
+        <li>Private transport and professional guides</li>
+        <li>Cultural sites and experiences</li>
+        <li>Wellness and health screening at licensed medical centres</li>
+        <li>Full local support in China</li>
+      </ul>
+
+      <h2>How Booking Works</h2>
+      <p>
+        SinowellJourneys does <strong>not sell directly to travellers</strong>. To ensure full EU consumer protection and professional service:
+      </p>
+      <ol>
+        <li>You book through an authorised Hungarian travel agency</li>
+        <li>Your agency handles payment, customer service and travel protection</li>
+        <li>SinowellJourneys organises and coordinates the China program</li>
+        <li>Licensed Chinese partners deliver your experience</li>
+      </ol>
+
+      <h2>Safety &amp; Trust</h2>
+      <p>All our China programs are delivered by:</p>
+      <ul>
+        <li>Licensed Chinese travel agencies</li>
+        <li>Licensed medical and wellness institutions</li>
+      </ul>
+      <p class="muted small">We work only with professional partners who meet strict legal and quality requirements.</p>
+
+      <h2>Contact</h2>
+      <p class="muted">Email us:</p>
+      <p><a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+    </section>
+
+    <!-- ZH -->
+    <section data-i18n="zh">
+      <h1>🌏 与 SinowellJourneys 一起探索中国</h1>
+      <p class="subtitle"><strong>文化、康养与真实体验</strong> —— 由可信合作伙伴交付</p>
+
+      <p>
+        SinowellJourneys 为匈牙利及欧洲旅客策划高端中国文化与康养旅行。
+        我们的项目由<strong>持牌匈牙利旅行社</strong>销售并运营，并由<strong>可信的中国旅行与医疗合作伙伴</strong>提供落地交付。
+      </p>
+
+      <h2>为什么选择 SinowellJourneys 的中国项目？</h2>
+      <p>
+        中国拥有世界级的文化资源，但也可能因为复杂而让人无从下手。
+        SinowellJourneys 希望让中国旅行变得：
+      </p>
+      <ul>
+        <li>更容易探索</li>
+        <li>更安全可靠</li>
+        <li>更真实地道</li>
+      </ul>
+
+      <p>我们把以下内容整合为一体：</p>
+      <ul>
+        <li>文化遗产与城市体验</li>
+        <li>现代康养与健康筛查</li>
+        <li>专业旅行服务</li>
+      </ul>
+      <p>为你提供一站式旅程。</p>
+
+      <h2>核心产品</h2>
+      <p><strong>C7 – 中国文化发现</strong><br />7 天游览中国历史、城市与传统文化的入门之旅。</p>
+      <p><strong>C10 – 中国文化与康养</strong><br />我们的旗舰 10 天行程，将文化旅行与专业康养及健康服务结合。</p>
+      <p><strong>C14 – 中国深度体验</strong><br />14 天游览更深入的文化与康养探索，适合希望沉浸式体验的旅客。</p>
+      <p class="muted small">每个项目均由持牌中国旅行社与医疗机构共同设计并交付。</p>
+
+      <h2>包含内容</h2>
+      <p>根据不同项目，你可能享受：</p>
+      <ul>
+        <li>4–5 星级酒店</li>
+        <li>专车出行与专业导游</li>
+        <li>精选文化景点与体验</li>
+        <li>在持牌医疗中心进行健康筛查与康养服务</li>
+        <li>中国当地全程支持</li>
+      </ul>
+
+      <h2>预订流程</h2>
+      <p>
+        SinowellJourneys <strong>不直接向旅客销售</strong>。为确保欧盟消费者保护与专业服务：
+      </p>
+      <ol>
+        <li>你通过持牌匈牙利旅行社进行预订</li>
+        <li>旅行社负责收款、客服与旅行保障</li>
+        <li>SinowellJourneys 负责中国项目组织与协调</li>
+        <li>持牌中国合作伙伴落地执行并交付体验</li>
+      </ol>
+
+      <h2>安全与信任</h2>
+      <ul>
+        <li>持牌中国旅行社</li>
+        <li>持牌医疗与康养机构</li>
+      </ul>
+      <p class="muted small">我们只与符合严格法律与质量标准的专业伙伴合作。</p>
+
+      <h2>联系</h2>
+      <p class="muted">如需咨询，请发邮件：</p>
+      <p><a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+    </section>
+
+    <!-- HU -->
+    <section data-i18n="hu">
+      <h1>🌏 Fedezze fel Kínát a SinowellJourneys-szel</h1>
+      <p class="subtitle"><strong>Kultúra, wellness és autentikus élmények</strong> – Megbízható partnereken keresztül</p>
+
+      <p>
+        A SinowellJourneys prémium kínai kulturális és wellness utazásokat állít össze magyarországi és európai utazók számára.
+        Programjainkat <strong>engedéllyel rendelkező magyar utazási irodák</strong> értékesítik és szervezik, a megvalósítást pedig
+        <strong>megbízható kínai utazási és egészségügyi partnerek</strong> végzik.
+      </p>
+
+      <h2>Miért Kína a SinowellJourneys-szel?</h2>
+      <p>
+        Kína a világ egyik leggazdagabb kulturális úti célja — ugyanakkor összetett és könnyen túlterhelő is lehet.
+        A SinowellJourneys célja, hogy a kínai utazás:
+      </p>
+      <ul>
+        <li>Könnyen felfedezhető legyen</li>
+        <li>Biztonságos legyen</li>
+        <li>Valóban autentikus legyen</li>
+      </ul>
+
+      <p>Ötvözzük:</p>
+      <ul>
+        <li>Kulturális örökség</li>
+        <li>Modern wellness és egészségügyi szűrés</li>
+        <li>Professzionális utazási szolgáltatások</li>
+      </ul>
+
+      <h2>Kiemelt programjaink</h2>
+      <p><strong>C7 – Kína kulturális felfedezése</strong><br />7 napos bevezetés Kína történelmébe, városaiba és hagyományaiba.</p>
+      <p><strong>C10 – Kína kultúra &amp; wellness</strong><br />Kiemelt, 10 napos programunk, amely a kulturális utazást professzionális wellness és egészségügyi szolgáltatásokkal ötvözi.</p>
+      <p><strong>C14 – Mélyebb Kína élmény</strong><br />14 napos, elmélyülést kínáló program azoknak, akik mélyebb kulturális és wellness élményt keresnek.</p>
+      <p class="muted small">Minden programot engedéllyel rendelkező kínai utazási irodák és egészségügyi intézmények terveznek és valósítanak meg.</p>
+
+      <h2>Mit tartalmaz?</h2>
+      <ul>
+        <li>4–5 csillagos szállodák</li>
+        <li>Privát közlekedés és professzionális idegenvezetők</li>
+        <li>Kulturális helyszínek és élmények</li>
+        <li>Wellness és egészségügyi szűrés engedéllyel rendelkező központokban</li>
+        <li>Teljes helyi támogatás Kínában</li>
+      </ul>
+
+      <h2>Foglalás menete</h2>
+      <p>
+        A SinowellJourneys <strong>nem értékesít közvetlenül az utazóknak</strong>. A teljes EU-s fogyasztóvédelem érdekében:
+      </p>
+      <ol>
+        <li>Ön egy felhatalmazott magyar utazási irodán keresztül foglal</li>
+        <li>Az iroda intézi a fizetést, ügyfélszolgálatot és az utazásvédelmet</li>
+        <li>A SinowellJourneys szervezi és koordinálja a kínai programot</li>
+        <li>Az élményt engedéllyel rendelkező kínai partnerek valósítják meg</li>
+      </ol>
+
+      <h2>Biztonság &amp; megbízhatóság</h2>
+      <ul>
+        <li>Engedéllyel rendelkező kínai utazási irodák</li>
+        <li>Engedéllyel rendelkező egészségügyi és wellness intézmények</li>
+      </ul>
+
+      <h2>Kapcsolat</h2>
+      <p class="muted">Írjon nekünk:</p>
+      <p><a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+    </section>
+
+    <!-- 底部：返回首页（三语仅显示当前语言那一个） -->
+    <div class="footer">
+      <a class="back-link" href="./index.html" data-back="en">← Back to Home</a>
+      <a class="back-link" href="./index.html" data-back="zh">← 返回首页</a>
+      <a class="back-link" href="./index.html" data-back="hu">← Vissza a főoldalra</a>
     </div>
-  </header>
-
-  <main>
-    <div class="card">
-
-      <!-- Back to home -->
-      <a class="back" href="./index.html" data-i18n="en">← Back to Home</a>
-      <a class="back" href="./index.html" data-i18n="hu">← Vissza a főoldalra</a>
-      <a class="back" href="./index.html" data-i18n="zh">← 返回首页</a>
-
-      <!-- EN -->
-      <section data-i18n="en">
-        <h1>🌏 Discover China with SinowellJourneys</h1>
-        <p class="subtitle"><strong>Culture, Wellness and Authentic Experiences</strong> – Delivered by Trusted Partners</p>
-
-        <p>
-          SinowellJourneys curates premium China cultural and wellness journeys for travellers in Hungary and across Europe.
-          Our programs are sold and operated through <strong>licensed Hungarian travel agencies</strong> and delivered by
-          <strong>trusted Chinese travel and medical partners</strong>.
-        </p>
-
-        <h2>Why China with SinowellJourneys?</h2>
-        <p>
-          China is one of the world’s richest cultural destinations — but it can also be complex and overwhelming.
-          SinowellJourneys was created to make China travel:
-        </p>
-        <ul>
-          <li>Easy to explore</li>
-          <li>Safe to travel</li>
-          <li>Truly authentic</li>
-        </ul>
-        <p>We combine:</p>
-        <ul>
-          <li>Cultural heritage</li>
-          <li>Modern wellness &amp; health screening</li>
-          <li>Professional travel services</li>
-        </ul>
-        <p>into one seamless experience.</p>
-
-        <h2>Our Signature Programs</h2>
-        <p><strong>C7 – China Culture Discovery</strong><br />A 7-day introduction to China’s history, cities and traditions.</p>
-        <p><strong>C10 – China Culture &amp; Wellness</strong><br />Our flagship 10-day experience combining cultural travel with professional health and wellness services.</p>
-        <p><strong>C14 – China Deep Experience</strong><br />A 14-day immersive journey for travellers seeking deeper cultural and wellness exploration.</p>
-        <p class="muted small">
-          Each program is carefully designed and delivered by licensed Chinese travel agencies and medical institutions.
-        </p>
-
-        <h2>What’s Included</h2>
-        <p>Depending on your program, you may enjoy:</p>
-        <ul>
-          <li>4–5 star hotels</li>
-          <li>Private transport and professional guides</li>
-          <li>Cultural sites and experiences</li>
-          <li>Wellness and health screening at licensed medical centres</li>
-          <li>Full local support in China</li>
-        </ul>
-
-        <h2>How Booking Works</h2>
-        <p>
-          SinowellJourneys does <strong>not sell directly to travellers</strong>. To ensure full EU consumer protection and professional service:
-        </p>
-        <ol>
-          <li>You book through an authorised Hungarian travel agency</li>
-          <li>Your agency handles payment, customer service and travel protection</li>
-          <li>SinowellJourneys organises and coordinates the China program</li>
-          <li>Licensed Chinese partners deliver your experience</li>
-        </ol>
-
-        <h2>Safety &amp; Trust</h2>
-        <p>All our China programs are delivered by:</p>
-        <ul>
-          <li>Licensed Chinese travel agencies</li>
-          <li>Licensed medical and wellness institutions</li>
-        </ul>
-        <p class="muted small">We work only with professional partners who meet strict legal and quality requirements.</p>
-
-        <div class="contact">
-          <h2>Contact</h2>
-          <p class="muted">Email us:</p>
-          <p><a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
-        </div>
-      </section>
-
-      <!-- HU -->
-      <section data-i18n="hu">
-        <h1>🌏 Fedezze fel Kínát a SinowellJourneys-szel</h1>
-        <p class="subtitle"><strong>Kultúra, wellness és autentikus élmények</strong> – Megbízható partnereken keresztül</p>
-
-        <p>
-          A SinowellJourneys prémium kínai kulturális és wellness utazásokat állít össze magyarországi és európai utazók számára.
-          Programjainkat <strong>engedéllyel rendelkező magyar utazási irodák</strong> értékesítik és szervezik, a megvalósítást pedig
-          <strong>megbízható kínai utazási és egészségügyi partnerek</strong> végzik.
-        </p>
-
-        <h2>Miért Kína a SinowellJourneys-szel?</h2>
-        <p>
-          Kína a világ egyik leggazdagabb kulturális úti célja — ugyanakkor összetett és könnyen túlterhelő is lehet.
-          A SinowellJourneys célja, hogy a kínai utazás:
-        </p>
-        <ul>
-          <li>Könnyen felfedezhető legyen</li>
-          <li>Biztonságos legyen</li>
-          <li>Valóban autentikus legyen</li>
-        </ul>
-        <p>Ötvözzük:</p>
-        <ul>
-          <li>Kulturális örökség</li>
-          <li>Modern wellness és egészségügyi szűrés</li>
-          <li>Professzionális utazási szolgáltatások</li>
-        </ul>
-        <p>egy zökkenőmentes élményben.</p>
-
-        <h2>Kiemelt programjaink</h2>
-        <p><strong>C7 – Kína kulturális felfedezése</strong><br />7 napos bevezetés Kína történelmébe, városaiba és hagyományaiba.</p>
-        <p><strong>C10 – Kína kultúra &amp; wellness</strong><br />Kiemelt, 10 napos programunk, amely a kulturális utazást professzionális wellness és egészségügyi szolgáltatásokkal ötvözi.</p>
-        <p><strong>C14 – Mélyebb Kína élmény</strong><br />14 napos, elmélyülést kínáló program azoknak, akik mélyebb kulturális és wellness élményt keresnek.</p>
-        <p class="muted small">
-          Minden programot engedéllyel rendelkező kínai utazási irodák és egészségügyi intézmények terveznek és valósítanak meg.
-        </p>
-
-        <h2>Mit tartalmaz?</h2>
-        <p>A programtól függően az alábbiakat élvezheti:</p>
-        <ul>
-          <li>4–5 csillagos szállodák</li>
-          <li>Privát közlekedés és professzionális idegenvezetők</li>
-          <li>Kulturális helyszínek és élmények</li>
-          <li>Wellness és egészségügyi szűrés engedéllyel rendelkező központokban</li>
-          <li>Teljes helyi támogatás Kínában</li>
-        </ul>
-
-        <h2>Hogyan működik a foglalás?</h2>
-        <p>
-          A SinowellJourneys <strong>nem értékesít közvetlenül az utazóknak</strong>.
-          A teljes EU-s fogyasztóvédelem és professzionális szolgáltatás érdekében:
-        </p>
-        <ol>
-          <li>Ön egy felhatalmazott magyar utazási irodán keresztül foglal</li>
-          <li>Az iroda intézi a fizetést, ügyfélszolgálatot és az utazásvédelmet</li>
-          <li>A SinowellJourneys szervezi és koordinálja a kínai programot</li>
-          <li>Az élményt engedéllyel rendelkező kínai partnerek valósítják meg</li>
-        </ol>
-
-        <h2>Biztonság &amp; megbízhatóság</h2>
-        <p>Minden kínai programunkat az alábbiak biztosítják:</p>
-        <ul>
-          <li>Engedéllyel rendelkező kínai utazási irodák</li>
-          <li>Engedéllyel rendelkező egészségügyi és wellness intézmények</li>
-        </ul>
-        <p class="muted small">Csak szigorú jogi és minőségi követelményeknek megfelelő partnerekkel dolgozunk.</p>
-
-        <div class="contact">
-          <h2>Kapcsolat</h2>
-          <p class="muted">Írjon nekünk:</p>
-          <p><a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
-        </div>
-      </section>
-
-      <!-- ZH -->
-      <section data-i18n="zh">
-        <h1>🌏 与 SinowellJourneys 一起探索中国</h1>
-        <p class="subtitle"><strong>文化、康养与真实体验</strong> —— 由可信合作伙伴交付</p>
-
-        <p>
-          SinowellJourneys 为匈牙利及欧洲旅客策划高端中国文化与康养旅行。
-          我们的项目由<strong>持牌匈牙利旅行社</strong>销售并运营，并由<strong>可信的中国旅行与医疗合作伙伴</strong>提供落地交付。
-        </p>
-
-        <h2>为什么选择 SinowellJourneys 的中国项目？</h2>
-        <p>
-          中国拥有世界级的文化资源，但也可能因为复杂而让人无从下手。
-          SinowellJourneys 希望让中国旅行变得：
-        </p>
-        <ul>
-          <li>更容易探索</li>
-          <li>更安全可靠</li>
-          <li>更真实地道</li>
-        </ul>
-        <p>我们把以下内容整合为一体：</p>
-        <ul>
-          <li>文化遗产与城市体验</li>
-          <li>现代康养与健康筛查</li>
-          <li>专业旅行服务</li>
-        </ul>
-        <p>为你提供一站式旅程。</p>
-
-        <h2>核心产品</h2>
-        <p><strong>C7 – 中国文化发现</strong><br />7 天游览中国历史、城市与传统文化的入门之旅。</p>
-        <p><strong>C10 – 中国文化与康养</strong><br />我们的旗舰 10 天行程，将文化旅行与专业康养及健康服务结合。</p>
-        <p><strong>C14 – 中国深度体验</strong><br />14 天游览更深入的文化与康养探索，适合希望沉浸式体验的旅客。</p>
-        <p class="muted small">每个项目均由持牌中国旅行社与医疗机构共同设计并交付。</p>
-
-        <h2>包含内容</h2>
-        <p>根据不同项目，你可能享受：</p>
-        <ul>
-          <li>4–5 星级酒店</li>
-          <li>专车出行与专业导游</li>
-          <li>精选文化景点与体验</li>
-          <li>在持牌医疗中心进行健康筛查与康养服务</li>
-          <li>中国当地全程支持</li>
-        </ul>
-
-        <h2>预订流程</h2>
-        <p>
-          SinowellJourneys <strong>不直接向旅客销售</strong>。为确保欧盟消费者保护与专业服务：
-        </p>
-        <ol>
-          <li>你通过持牌匈牙利旅行社进行预订</li>
-          <li>旅行社负责收款、客服与旅行保障</li>
-          <li>SinowellJourneys 负责中国项目组织与协调</li>
-          <li>持牌中国合作伙伴落地执行并交付体验</li>
-        </ol>
-
-        <h2>安全与信任</h2>
-        <p>我们的中国项目由以下机构提供：</p>
-        <ul>
-          <li>持牌中国旅行社</li>
-          <li>持牌医疗与康养机构</li>
-        </ul>
-        <p class="muted small">我们只与符合严格法律与质量标准的专业伙伴合作。</p>
-
-        <div class="contact">
-          <h2>联系</h2>
-          <p class="muted">如需咨询，请发邮件：</p>
-          <p><a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
-        </div>
-      </section>
-
-    </div>
-  </main>
+  </div>
 
   <script>
     /**
-     * 语言继承逻辑（尽量兼容常见首页实现）：
-     * - 优先：URL ?lang=en|hu|zh
-     * - 其次：localStorage.lang
-     * - 再次：浏览器语言（hu/zh/en）
-     * - 点击切换后会写入 localStorage，并同步更新 URL 参数（不刷新也可）
+     * 语言继承（无按钮版）：
+     * - 优先：URL ?lang= / ?language= / ?locale=
+     * - 其次：localStorage 多键兼容：lang / language / siteLang / locale / currentLang
+     * - 再次：浏览器语言
+     * 并将最终语言写回 localStorage + URL，保证后续分页一致。
      */
     (function () {
-      const supported = ["en", "hu", "zh"];
+      const supported = ["en", "zh", "hu"];
+      const storageKeys = ["lang", "language", "siteLang", "locale", "currentLang"];
 
-      function getLangFromURL() {
-        const p = new URLSearchParams(window.location.search);
-        const v = (p.get("lang") || "").toLowerCase();
+      function normalize(v) {
+        if (!v) return null;
+        v = String(v).trim().toLowerCase();
+        if (v === "magyar") return "hu";
+        if (v === "hungarian") return "hu";
+        if (v === "cn") return "zh";
+        if (v.startsWith("zh")) return "zh";
+        if (v.startsWith("hu")) return "hu";
+        if (v.startsWith("en")) return "en";
         return supported.includes(v) ? v : null;
       }
 
-      function getLangFromStorage() {
+      function getFromURL() {
+        const p = new URLSearchParams(window.location.search);
+        return normalize(p.get("lang") || p.get("language") || p.get("locale"));
+      }
+
+      function getFromStorage() {
         try {
-          const v = (localStorage.getItem("lang") || "").toLowerCase();
-          return supported.includes(v) ? v : null;
-        } catch (e) {
-          return null;
-        }
+          for (const k of storageKeys) {
+            const v = normalize(localStorage.getItem(k));
+            if (v) return v;
+          }
+        } catch (e) {}
+        return null;
       }
 
-      function guessLangFromNavigator() {
-        const lang = (navigator.language || "en").toLowerCase();
-        if (lang.startsWith("hu")) return "hu";
-        if (lang.startsWith("zh")) return "zh";
-        return "en";
+      function guessFromNavigator() {
+        const v = normalize(navigator.language || "en");
+        return v || "en";
       }
 
-      function setLang(lang, { persist = true, syncUrl = true } = {}) {
-        const sections = document.querySelectorAll("[data-i18n]");
-        sections.forEach(el => {
+      function applyLang(lang) {
+        // 内容显示
+        document.querySelectorAll("[data-i18n]").forEach(el => {
           el.classList.toggle("active", el.getAttribute("data-i18n") === lang);
         });
 
-        const buttons = document.querySelectorAll("[data-set-lang]");
-        buttons.forEach(btn => {
-          btn.setAttribute("aria-pressed", btn.getAttribute("data-set-lang") === lang ? "true" : "false");
-        });
-
+        // html lang
         document.documentElement.lang = lang;
 
-        if (persist) {
-          try { localStorage.setItem("lang", lang); } catch (e) {}
-        }
+        // 底部返回首页三语只显示当前语言
+        document.querySelectorAll("[data-back]").forEach(a => {
+          a.style.display = (a.getAttribute("data-back") === lang) ? "inline-block" : "none";
+        });
 
-        if (syncUrl) {
-          const url = new URL(window.location.href);
-          url.searchParams.set("lang", lang);
-          window.history.replaceState({}, "", url.toString());
-        }
+        // 写入 storage（最大化兼容 index）
+        try { storageKeys.forEach(k => localStorage.setItem(k, lang)); } catch (e) {}
 
-        // 确保“返回首页”也带上 lang 参数（如果首页也用该参数）
-        document.querySelectorAll('a[href="./index.html"]').forEach(a => {
-          const url = new URL(a.getAttribute("href"), window.location.href);
-          url.searchParams.set("lang", lang);
-          a.setAttribute("href", url.pathname + url.search);
+        // 同步 URL（确保分页/返回首页保持语言）
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", lang);
+        window.history.replaceState({}, "", url.toString());
+
+        // 返回首页链接也带 lang
+        document.querySelectorAll('a[href^="./index.html"]').forEach(a => {
+          const u = new URL(a.getAttribute("href"), window.location.href);
+          u.searchParams.set("lang", lang);
+          a.setAttribute("href", u.pathname + u.search);
         });
       }
 
-      // init
-      const initial = getLangFromURL() || getLangFromStorage() || guessLangFromNavigator();
-      setLang(initial, { persist: true, syncUrl: true });
-
-      // bind
-      document.querySelectorAll("[data-set-lang]").forEach(btn => {
-        btn.addEventListener("click", () => setLang(btn.getAttribute("data-set-lang")));
-      });
+      const initial = getFromURL() || getFromStorage() || guessFromNavigator();
+      applyLang(initial);
     })();
   </script>
 </body>
