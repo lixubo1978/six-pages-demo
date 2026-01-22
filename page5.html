@@ -1,12 +1,461 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>页面五</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ | SinoWellJourneys</title>
+
+  <style>
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      color:#111;
+      background:#fafafa;
+    }
+    header{
+      background:#0b1220;
+      color:#fff;
+      padding: 48px 20px;
+    }
+    .wrap{max-width: 980px; margin: 0 auto;}
+    h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+    .subhead{margin:0; font-size: 18px; opacity:.9;}
+    main{padding: 28px 20px 60px;}
+    section{
+      background:#fff;
+      border: 1px solid #eaeaea;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    h2{margin: 0 0 10px 0; font-size: 22px;}
+    h3{margin: 14px 0 6px; font-size: 18px;}
+    ul,ol{margin: 8px 0 0 20px;}
+    .note{
+      background:#f3f6ff;
+      border: 1px solid #dfe7ff;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      background:#fff;
+    }
+    th, td{
+      text-align:left;
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    th{background:#fafafa;}
+    tr:last-child td{border-bottom:none;}
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    @media (max-width: 760px){
+      .grid2{grid-template-columns:1fr;}
+    }
+    .links a{
+      display:inline-block;
+      margin: 6px 10px 0 0;
+      padding: 8px 12px;
+      border:1px solid #e6e6e6;
+      border-radius: 999px;
+      text-decoration:none;
+      color:#111;
+      background:#fff;
+    }
+    .links a:hover{border-color:#cfcfcf;}
+    footer{
+      padding: 18px 20px 30px;
+      color:#666;
+      text-align:center;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    /* 邮箱链接蓝色 */
+    a{color:#2563eb;}
+  </style>
+
+  <script>
+    const LANG_KEY = 'swj_lang';
+
+    function applyLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      document.documentElement.lang = lang;
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+      let lang = 'en';
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      if(!['en','zh','hu'].includes(lang)) lang = 'en';
+      applyLang(lang);
+    });
+  </script>
 </head>
+
 <body>
-  <h1>这是页面五</h1>
-  <p>这里是页面五的内容。</p>
-  <p><a href="index.html">返回首页</a></p>
-</body>
-</html>
+  <header>
+    <div class="wrap">
+      <h1 data-lang="en">Frequently Asked Questions</h1>
+      <h1 data-lang="zh" style="display:none">常见问题（FAQ）</h1>
+      <h1 data-lang="hu" style="display:none">Gyakran ismételt kérdések (GYIK)</h1>
+
+      <p class="subhead" data-lang="en">SinoWellJourneys Travel — FAQ</p>
+      <p class="subhead" data-lang="zh" style="display:none">SinoWellJourneys Travel — 常见问题</p>
+      <p class="subhead" data-lang="hu" style="display:none">SinoWellJourneys Travel — GYIK</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ================= EN ================= -->
+    <div data-lang="en">
+      <section>
+        <h2>About SinoWellJourneys Travel</h2>
+
+        <h3>Q: What is SinoWellJourneys Travel?</h3>
+        <p>
+          SinoWellJourneys Travel is an EU-based travel organiser that designs and coordinates China cultural and wellness travel programs for licensed travel agencies in Hungary and across Europe.
+        </p>
+
+        <h3>Q: Are you a travel agency?</h3>
+        <p>
+          No. SinoWellJourneys Travel is a travel organiser and product platform.
+          All customer sales and payments are handled by authorised retail travel agencies.
+        </p>
+      </section>
+
+      <section>
+        <h2>Booking &amp; Payments</h2>
+
+        <h3>Q: Can I book directly with SinoWellJourneys Travel?</h3>
+        <p>
+          No. For consumer protection and regulatory compliance, all bookings are made through licensed travel agencies.
+        </p>
+
+        <h3>Q: Who do I pay?</h3>
+        <p>
+          You pay your chosen travel agency.
+          SinoWellJourneys Travel does not collect payments from travellers.
+        </p>
+
+        <h3>Q: Why is payment required before travel?</h3>
+        <p>
+          China programs involve hotels, medical services and local suppliers that must be prepaid.
+          This ensures your trip is properly secured and confirmed.
+        </p>
+      </section>
+
+      <section>
+        <h2>Programs &amp; Services</h2>
+
+        <h3>Q: Who provides the travel services in China?</h3>
+        <p>
+          All travel services are provided by licensed Chinese travel agencies and local service providers contracted by SinoWellJourneys Travel.
+        </p>
+
+        <h3>Q: Who provides the medical and wellness services?</h3>
+        <p>
+          All medical and wellness services are delivered by licensed Chinese medical institutions.
+          SinoWellJourneys Travel and travel agencies do not provide medical diagnosis or treatment.
+        </p>
+
+        <h3>Q: Is medical insurance included?</h3>
+        <p>
+          Travel and medical insurance is arranged by your travel agency.
+          We strongly recommend comprehensive travel and medical coverage.
+        </p>
+      </section>
+
+      <section>
+        <h2>Safety &amp; Compliance</h2>
+
+        <h3>Q: Are your suppliers licensed?</h3>
+        <p>
+          Yes. All Chinese travel agencies and medical centres we work with are legally licensed in China.
+        </p>
+
+        <h3>Q: Is this compliant with EU law?</h3>
+        <p>
+          Yes. SinoWellJourneys Travel operates as a travel organiser and works through licensed EU travel agencies who handle consumer protection and booking obligations.
+        </p>
+      </section>
+
+      <section>
+        <h2>Refunds &amp; Complaints</h2>
+
+        <h3>Q: Who do I contact if something goes wrong?</h3>
+        <p>
+          You contact your travel agency.
+          They handle customer service, refunds and complaints.
+        </p>
+
+        <h3>Q: Can SinoWellJourneys Travel issue refunds?</h3>
+        <p>
+          No. Refunds are handled by the travel agency that sold you the trip.
+        </p>
+      </section>
+
+      <section>
+        <h2>For Travel Agencies</h2>
+
+        <h3>Q: How do I become a SinoWellJourneys Travel partner?</h3>
+        <p>
+          If you are a licensed travel agency, contact us at
+          <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+          to receive our trade rates and program details.
+        </p>
+      </section>
+
+      <section>
+        <h2>For Banks &amp; Partners</h2>
+
+        <h3>Q: Does SinoWellJourneys Travel handle customer funds?</h3>
+        <p>
+          No. All customer funds are collected by retail travel agencies.
+          SinoWellJourneys Travel only receives B2B payments for organised services.
+        </p>
+
+        <h3>Q: How are payments to China made?</h3>
+        <p>
+          SinoWellJourneys Travel pays licensed Chinese suppliers under formal service contracts and invoices, ensuring full transparency and compliance.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">Back to Home</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= 中文 ================= -->
+    <div data-lang="zh" style="display:none">
+      <section>
+        <h2>关于 SinoWellJourneys Travel</h2>
+
+        <h3>问：SinoWellJourneys Travel 是什么？</h3>
+        <p>
+          SinoWellJourneys Travel 是一家欧盟旅行组织方，为匈牙利及欧洲的持牌旅行社设计并协调中国文化与康养旅行项目。
+        </p>
+
+        <h3>问：你们是旅行社吗？</h3>
+        <p>
+          不是。SinoWellJourneys Travel 是旅行组织方与产品平台。
+          所有客户销售与收款均由授权零售旅行社完成。
+        </p>
+      </section>
+
+      <section>
+        <h2>预订与付款</h2>
+
+        <h3>问：我可以直接向 SinoWellJourneys Travel 预订吗？</h3>
+        <p>
+          不可以。为保障消费者权益与监管合规，所有预订均通过持牌旅行社完成。
+        </p>
+
+        <h3>问：我应该向谁付款？</h3>
+        <p>
+          您向您选择的旅行社付款。
+          SinoWellJourneys Travel 不向旅客收款。
+        </p>
+
+        <h3>问：为什么需要在出行前完成付款？</h3>
+        <p>
+          中国项目涉及酒店、医疗与当地供应商资源，需要提前预付锁定。
+          这将确保您的行程被妥善确认并落实。
+        </p>
+      </section>
+
+      <section>
+        <h2>项目与服务</h2>
+
+        <h3>问：中国境内旅行服务由谁提供？</h3>
+        <p>
+          所有旅行服务由持牌中国旅行社与 SinoWellJourneys Travel 签约的当地服务商提供。
+        </p>
+
+        <h3>问：医疗与康养服务由谁提供？</h3>
+        <p>
+          所有医疗与康养服务均由具备资质的中国医疗机构提供。
+          SinoWellJourneys Travel 与旅行社不提供医学诊断或治疗。
+        </p>
+
+        <h3>问：是否包含医疗保险？</h3>
+        <p>
+          旅行与医疗保险由您的旅行社安排。
+          我们强烈建议您购买全面的旅行与医疗保险。
+        </p>
+      </section>
+
+      <section>
+        <h2>安全与合规</h2>
+
+        <h3>问：你们的供应商是否具备资质？</h3>
+        <p>
+          是的。我们合作的中国旅行社与医疗中心均依法具备相关资质。
+        </p>
+
+        <h3>问：这是否符合欧盟法律？</h3>
+        <p>
+          是的。SinoWellJourneys Travel 作为旅行组织方，通过持牌欧盟旅行社合作，由旅行社承担消费者保护与预订责任。
+        </p>
+      </section>
+
+      <section>
+        <h2>退款与投诉</h2>
+
+        <h3>问：如果发生问题我该联系谁？</h3>
+        <p>
+          请联系您的旅行社。
+          旅行社负责客户服务、退款与投诉处理。
+        </p>
+
+        <h3>问：SinoWellJourneys Travel 可以退款吗？</h3>
+        <p>
+          不可以。退款由向您销售行程的旅行社处理。
+        </p>
+      </section>
+
+      <section>
+        <h2>面向旅行社</h2>
+
+        <h3>问：如何成为 SinoWellJourneys Travel 的合作伙伴？</h3>
+        <p>
+          如果您是持牌旅行社，请联系：
+          <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+          获取批发价与项目资料。
+        </p>
+      </section>
+
+      <section>
+        <h2>面向银行与合作伙伴</h2>
+
+        <h3>问：SinoWellJourneys Travel 是否收取客户资金？</h3>
+        <p>
+          否。所有客户资金由零售旅行社收取。
+          SinoWellJourneys Travel 仅收取 B2B 项目组织服务款项。
+        </p>
+
+        <h3>问：对中国的付款如何完成？</h3>
+        <p>
+          SinoWellJourneys Travel 根据正式服务合同与发票向持牌中国供应商付款，确保透明与合规。
+        </p>
+      </section>
+
+      <section>
+        <h2>联系</h2>
+        <p>📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">返回首页</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= HU ================= -->
+    <div data-lang="hu" style="display:none">
+      <section>
+        <h2>A SinoWellJourneys Travelről</h2>
+
+        <h3>K: Mi a SinoWellJourneys Travel?</h3>
+        <p>
+          A SinoWellJourneys Travel egy EU-alapú utazásszervező, amely kínai kulturális és wellness utazási programokat tervez és koordinál
+          engedéllyel rendelkező utazási irodák számára Magyarországon és egész Európában.
+        </p>
+
+        <h3>K: Utazási iroda vagytok?</h3>
+        <p>
+          Nem. A SinoWellJourneys Travel utazásszervező és termékplatform.
+          Az ügyfélértékesítést és a fizetéseket engedéllyel rendelkező kiskereskedelmi utazási irodák kezelik.
+        </p>
+      </section>
+
+      <section>
+        <h2>Foglalás &amp; fizetés</h2>
+
+        <h3>K: Foglalhatok közvetlenül a SinoWellJourneys Travelnél?</h3>
+        <p>
+          Nem. A fogyasztóvédelem és a szabályozói megfelelés érdekében minden foglalás engedéllyel rendelkező utazási irodán keresztül történik.
+        </p>
+
+        <h3>K: Kinek fizetek?</h3>
+        <p>
+          A választott utazási irodájának fizet.
+          A SinoWellJourneys Travel nem szed be fizetést az utazóktól.
+        </p>
+
+        <h3>K: Miért szükséges az utazás előtt fizetni?</h3>
+        <p>
+          A kínai programok szállodákat, egészségügyi szolgáltatásokat és helyi beszállítókat érintenek, amelyek előrefizetést igényelnek.
+          Ez biztosítja, hogy az utazás megfelelően rögzítve és visszaigazolva legyen.
+        </p>
+      </section>
+
+      <section>
+        <h2>Programok &amp; szolgáltatások</h2>
+
+        <h3>K: Ki nyújtja a kínai utazási szolgáltatásokat?</h3>
+        <p>
+          Minden utazási szolgáltatást engedéllyel rendelkező kínai utazási irodák és a SinoWellJourneys Travel által szerződtetett helyi szolgáltatók nyújtanak.
+        </p>
+
+        <h3>K: Ki nyújtja az orvosi és wellness szolgáltatásokat?</h3>
+        <p>
+          Minden orvosi és wellness szolgáltatást engedéllyel rendelkező kínai egészségügyi intézmények nyújtanak.
+          A SinoWellJourneys Travel és az utazási irodák nem nyújtanak orvosi diagnózist vagy kezelést.
+        </p>
+
+        <h3>K: Tartalmazza az orvosi biztosítást?</h3>
+        <p>
+          Az utas- és egészségbiztosítást az utazási irodája intézi.
+          Javasoljuk átfogó utas- és egészségbiztosítás megkötését.
+        </p>
+      </section>
+
+      <section>
+        <h2>Biztonság &amp; megfelelőség</h2>
+
+        <h3>K: Engedéllyel rendelkeznek a beszállítók?</h3>
+        <p>
+          Igen. Minden kínai utazási iroda és orvosi központ, akikkel együttműködünk, jogszerűen engedéllyel rendelkezik Kínában.
+        </p>
+
+        <h3>K: Ez megfelel az EU jogának?</h3>
+        <p>
+          Igen. A SinoWellJourneys Travel utazásszervezőként működik, és engedéllyel rendelkező EU-s utazási irodákon keresztül dolgozik,
+          amelyek a fogyasztóvédelmi és foglalási kötelezettségeket kezelik.
+        </p>
+      </section>
+
+      <section>
+        <h2>Visszatérítés &amp; panaszok</h2>
+
+        <h3>K: Kit keressek, ha valami probléma van?</h3>
+        <p>
+          A saját utazási irodáját kell keresnie.
+          Ők kezelik az ügyfélszolgálatot, a visszatérítéseket és a panaszokat.
+        </p>
+
+        <h3>K: Tud a SinoWellJourneys Travel visszatérítést adni?</h3>
+        <p>
+          Nem. A visszatérítéseket az az utazási iroda kezeli, amely az utat értékesítette.
+        </p>
+      </section>
