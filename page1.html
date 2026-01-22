@@ -77,13 +77,11 @@
       color:#111;
       background:#fff;
     }
-    .links a:hover{border-color:#cfcfcf;}
     footer{
       padding: 18px 20px 30px;
       color:#666;
       text-align:center;
     }
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
     a{color:#111;}
   </style>
 
@@ -99,7 +97,7 @@
 
     window.addEventListener('DOMContentLoaded', function(){
       let lang = 'en';
-      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e){}
       if(!['en','zh','hu'].includes(lang)) lang = 'en';
       applyLang(lang);
     });
@@ -107,364 +105,113 @@
 </head>
 
 <body>
-  <header>
-    <div class="wrap">
-      <h1 data-lang="en">For Travel Agencies</h1>
-      <h1 data-lang="zh" style="display:none">面向旅行社</h1>
-      <h1 data-lang="hu" style="display:none">Utazási irodáknak</h1>
+<header>
+  <div class="wrap">
+    <h1 data-lang="en">For Travel Agencies</h1>
+    <h1 data-lang="zh" style="display:none">面向旅行社</h1>
+    <h1 data-lang="hu" style="display:none">Utazási irodáknak</h1>
 
-      <p class="subhead" data-lang="en">Sell Premium China Experiences. We Handle the Complexity.</p>
-      <p class="subhead" data-lang="zh" style="display:none">高端中国旅行体验，我们负责复杂部分</p>
-      <p class="subhead" data-lang="hu" style="display:none">Prémium kínai élmények. A komplexitást mi kezeljük.</p>
+    <p class="subhead" data-lang="en">Sell Premium China Experiences. We Handle the Complexity.</p>
+    <p class="subhead" data-lang="zh" style="display:none">高端中国旅行体验，我们负责复杂部分</p>
+    <p class="subhead" data-lang="hu" style="display:none">Prémium kínai élmények. A komplexitást mi kezeljük.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= EN ================= -->
+<div data-lang="en">
+  <section>
+    <p>
+      SinoWellJourneys provides professionally structured China cultural and wellness travel programs
+      to licensed travel agencies across the European Union.
+    </p>
+    <p>
+      We act as the travel organiser and wholesale platform, allowing you to offer premium China experiences
+      without overseas operational and compliance risk.
+    </p>
+    <div class="note">
+      You focus on sales and customers.<br>
+      We handle the complexity behind the scenes.
     </div>
-  </header>
+  </section>
 
-  <main class="wrap">
+  <section>
+    <h2>How to Become a Partner</h2>
+    <p>If you are a licensed travel agency, please contact us:</p>
+    <p>📧 <a href="mailto:market@sinowelljourneys.eu">market@sinowelljourneys.eu</a></p>
 
-    <!-- ================= EN ================= -->
-    <div data-lang="en">
-      <section>
-        <p>
-          SinoWellJourneys provides professionally structured China cultural and wellness travel programs to licensed travel agencies
-          in Hungary and across the European Union.
-        </p>
-        <p>
-          We act as the travel organiser and wholesale product platform, enabling you to offer premium long-haul China experiences
-          to your clients — without the operational, compliance, and supplier management risks associated with overseas service delivery.
-        </p>
-        <div class="note">
-          You focus on sales and customer relationships.<br>
-          We handle the complexity behind the scenes.
-        </div>
-      </section>
-
-      <section>
-        <h2>What You Receive</h2>
-        <p>As a SinoWellJourneys partner agency, you gain access to:</p>
-        <ul>
-          <li>Curated, high-quality China cultural and wellness travel programs</li>
-          <li>Fully vetted and licensed Chinese travel agencies and medical partners</li>
-          <li>End-to-end organised itineraries, including hotels, transport, guides, and wellness services</li>
-          <li>Professional English-language operational coordination and support</li>
-          <li>Transparent, protected B2B pricing structure</li>
-          <li>No direct customer exposure to overseas suppliers</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Pricing Structure</h2>
-        <p>
-          SinoWellJourneys operates on a standardised B2B pricing model designed to protect both margin and brand positioning:
-        </p>
-        <table>
-          <thead>
-            <tr><th>Price Level</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><b>RRP</b></td><td>Recommended retail price</td></tr>
-            <tr><td><b>MAP</b></td><td>Minimum advertised price (publicly visible)</td></tr>
-            <tr><td><b>NET</b></td><td>Your wholesale purchase price</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          You purchase programs at <b>NET</b> and may sell at any price equal to or above <b>MAP</b>, allowing you to optimise your margin
-          while maintaining consistent market pricing.
-        </p>
-      </section>
-
-      <section>
-        <h2>Payments &amp; Cash Flow</h2>
-        <p>To secure long-haul travel services and medical arrangements in China, the following payment terms apply:</p>
-        <ul>
-          <li><b>30%</b> deposit upon booking confirmation</li>
-          <li><b>70%</b> balance payable <b>14 days</b> prior to departure</li>
-          <li>Program delivery commences only after full payment is received</li>
-        </ul>
-        <p class="note">
-          This structure ensures that hotels, medical services, and local suppliers in China are fully secured and prepaid in advance.
-        </p>
-      </section>
-
-      <section>
-        <h2>Customer Relationship &amp; Responsibility</h2>
-        <p>You remain the contracting party with your customer.</p>
-
-        <div class="grid2">
-          <div>
-            <h3>You retain full control over:</h3>
-            <ul>
-              <li>Sales and marketing</li>
-              <li>Payment collection</li>
-              <li>Customer communication and service</li>
-              <li>Refunds and EU consumer protection obligations</li>
-            </ul>
-          </div>
-          <div>
-            <h3>SinoWellJourneys is responsible for:</h3>
-            <ul>
-              <li>Product structure and quality</li>
-              <li>Supplier selection and coordination</li>
-              <li>Program organisation and delivery</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Risk &amp; Compliance</h2>
-        <ul>
-          <li>SinoWellJourneys contracts exclusively with licensed Chinese travel agencies and licensed medical institutions</li>
-          <li>All services are delivered under formal service agreements</li>
-          <li>Medical services are provided solely by licensed medical providers in China</li>
-          <li>SinoWellJourneys does not sell directly to consumers</li>
-        </ul>
-        <p class="note">
-          This structure ensures compliance with EU Package Travel regulations, consumer protection requirements,
-          and applicable Chinese regulations — protecting both you and your clients.
-        </p>
-      </section>
-
-      <section>
-        <h2>How to Become a Partner</h2>
-        <p>
-          If you are a licensed travel agency and wish to receive our trade rates and sample itineraries, please contact us:
-        </p>
-        <p>📧 <a href="mailto:market@sinowelljourneys.com">market@sinowelljourneys.com</a></p>
-
-        <div class="links">
-          <a href="index.html">Back to Home</a>
-        </div>
-      </section>
+    <div class="links">
+      <a href="index.html">Back to Home</a>
+      <a href="page2.html">For Travellers</a>
+      <a href="page3.html">Discover China</a>
     </div>
+  </section>
+</div>
 
-    <!-- ================= 中文 ================= -->
-    <div data-lang="zh" style="display:none">
-      <section>
-        <p>
-          SinoWellJourneys 为匈牙利及整个欧盟的持牌旅行社提供专业结构化的中国文化与康养旅行项目。
-        </p>
-        <p>
-          我们作为旅行组织方与批发产品平台，使您无需承担海外交付带来的运营、合规与供应商管理风险，
-          即可向客户提供高品质的中国长线旅行体验。
-        </p>
-        <div class="note">
-          您专注于销售与客户关系。<br>
-          复杂事务由我们在后台完成。
-        </div>
-      </section>
-
-      <section>
-        <h2>您将获得</h2>
-        <p>作为 SinoWellJourneys 的合作旅行社，您可获得：</p>
-        <ul>
-          <li>精心策划的中国文化与康养旅行产品</li>
-          <li>经过审核、具备资质的中国旅行社与医疗合作机构</li>
-          <li>端到端行程组织：酒店、交通、导游与康养服务</li>
-          <li>专业英文运营协调与支持</li>
-          <li>透明且受保护的 B2B 定价结构</li>
-          <li>客户无需直接接触海外供应商</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>价格结构</h2>
-        <p>SinoWellJourneys 采用标准化 B2B 定价模型，以兼顾利润与品牌/市场价格稳定：</p>
-        <table>
-          <thead>
-            <tr><th>价格层级</th><th>说明</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><b>RRP</b></td><td>建议零售价</td></tr>
-            <tr><td><b>MAP</b></td><td>最低公开销售价格（对外可见）</td></tr>
-            <tr><td><b>NET</b></td><td>批发采购价</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          您以 <b>NET</b> 价格采购，可在不低于 <b>MAP</b> 的前提下自由定价，以优化利润并维护市场价格体系。
-        </p>
-      </section>
-
-      <section>
-        <h2>付款与现金流</h2>
-        <p>为确保中国境内长线与医疗服务资源锁定，付款条款如下：</p>
-        <ul>
-          <li>预订确认时支付 <b>30%</b> 定金</li>
-          <li>出发前 <b>14</b> 天支付剩余 <b>70%</b></li>
-          <li>仅在全额到账后开始提供服务</li>
-        </ul>
-        <p class="note">
-          该结构确保酒店、医疗服务与本地供应商能够提前锁定并预付。
-        </p>
-      </section>
-
-      <section>
-        <h2>客户关系与责任</h2>
-        <p>您仍是客户的合同签约方。</p>
-
-        <div class="grid2">
-          <div>
-            <h3>您全面负责：</h3>
-            <ul>
-              <li>销售与营销</li>
-              <li>收款</li>
-              <li>客户沟通与服务</li>
-              <li>退款与欧盟消费者保护义务</li>
-            </ul>
-          </div>
-          <div>
-            <h3>SinoWellJourneys 负责：</h3>
-            <ul>
-              <li>产品结构与质量</li>
-              <li>供应商筛选与协调</li>
-              <li>项目组织与交付</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>风险与合规</h2>
-        <ul>
-          <li>仅与具备资质的中国旅行社与医疗机构合作</li>
-          <li>所有服务均在正式服务协议框架下交付</li>
-          <li>医疗服务仅由中国持牌医疗机构提供</li>
-          <li>SinoWellJourneys 不直接面向消费者销售</li>
-        </ul>
-        <p class="note">
-          该结构有助于满足欧盟旅游与消费者保护要求，并兼顾中国相关监管，从而保护您与您的客户。
-        </p>
-      </section>
-
-      <section>
-        <h2>如何成为合作伙伴</h2>
-        <p>如您为持牌旅行社并希望获取批发价与样例行程，请联系：</p>
-        <p>📧 <a href="mailto:market@sinowelljourneys.com">market@sinowelljourneys.com</a></p>
-
-        <div class="links">
-          <a href="index.html">返回首页</a>
-        </div>
-      </section>
+<!-- ================= 中文 ================= -->
+<div data-lang="zh" style="display:none">
+  <section>
+    <p>
+      SinoWellJourneys 为欧盟范围内的持牌旅行社提供专业结构化的中国文化与康养旅行项目。
+    </p>
+    <p>
+      我们作为旅行组织方与批发平台，帮助您在不承担海外合规与运营风险的情况下，
+      向客户提供高端中国旅行体验。
+    </p>
+    <div class="note">
+      您专注于销售与客户。<br>
+      复杂事务由我们负责。
     </div>
+  </section>
 
-    <!-- ================= HU ================= -->
-    <div data-lang="hu" style="display:none">
-      <section>
-        <p>
-          A SinoWellJourneys professzionálisan felépített kínai kulturális és wellness utazási programokat kínál
-          engedéllyel rendelkező utazási irodák számára Magyarországon és az Európai Unióban.
-        </p>
-        <p>
-          Utazásszervező és nagykereskedelmi platformként működünk, így prémium, hosszú távú kínai élményeket kínálhat ügyfeleinek
-          anélkül, hogy az overseas szolgáltatásnyújtás operatív, megfelelőségi és beszállítói kockázatait Ön viselné.
-        </p>
-        <div class="note">
-          Ön az értékesítésre és az ügyfélkapcsolatokra fókuszál.<br>
-          A háttérben jelentkező komplexitást mi kezeljük.
-        </div>
-      </section>
+  <section>
+    <h2>成为合作伙伴</h2>
+    <p>如您为持牌旅行社，请联系我们：</p>
+    <p>📧 <a href="mailto:market@sinowelljourneys.eu">market@sinowelljourneys.eu</a></p>
 
-      <section>
-        <h2>Mit kap partnerként</h2>
-        <p>SinoWellJourneys partnerként hozzáférést kap az alábbiakhoz:</p>
-        <ul>
-          <li>Gondosan összeállított kínai kulturális és wellness programok</li>
-          <li>Ellenőrzött, engedéllyel rendelkező kínai utazási irodák és egészségügyi partnerek</li>
-          <li>Teljes körűen szervezett útiterv: szállás, közlekedés, idegenvezetés és wellness szolgáltatások</li>
-          <li>Professzionális, angol nyelvű operatív koordináció és támogatás</li>
-          <li>Átlátható és védett B2B árazási struktúra</li>
-          <li>Nincs közvetlen ügyfélkapcsolat a külföldi beszállítókkal</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Árazási struktúra</h2>
-        <p>
-          A SinoWellJourneys standardizált B2B árazási modellt alkalmaz az árrés és a piaci pozíció védelmére:
-        </p>
-        <table>
-          <thead>
-            <tr><th>Árszint</th><th>Leírás</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><b>RRP</b></td><td>Ajánlott fogyasztói ár</td></tr>
-            <tr><td><b>MAP</b></td><td>Minimálisan hirdethető ár (nyilvános)</td></tr>
-            <tr><td><b>NET</b></td><td>Nagykereskedelmi beszerzési ár</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          NET áron vásárol, és MAP áron vagy afelett értékesíthet, így optimalizálhatja az árrést, miközben a piaci árpozíció védett.
-        </p>
-      </section>
-
-      <section>
-        <h2>Fizetés és cash-flow</h2>
-        <p>A kínai, hosszú távú és egészségügyi szolgáltatások biztosítása érdekében az alábbi fizetési feltételek érvényesek:</p>
-        <ul>
-          <li><b>30%</b> előleg a foglalás visszaigazolásakor</li>
-          <li><b>70%</b> fennmaradó összeg indulás előtt <b>14</b> nappal</li>
-          <li>A program teljesítése csak a teljes összeg beérkezése után kezdődik</li>
-        </ul>
-        <p class="note">
-          Ez biztosítja, hogy a szállások, egészségügyi szolgáltatások és helyi partnerek előre lefoglalhatók és előfinanszírozhatók.
-        </p>
-      </section>
-
-      <section>
-        <h2>Ügyfélkapcsolat és felelősség</h2>
-        <p>Ön marad az ügyféllel szerződő fél.</p>
-
-        <div class="grid2">
-          <div>
-            <h3>Ön felelős:</h3>
-            <ul>
-              <li>Értékesítés és marketing</li>
-              <li>Díjbeszedés</li>
-              <li>Ügyfélkommunikáció és ügyfélszolgálat</li>
-              <li>Visszatérítések és EU fogyasztóvédelmi kötelezettségek</li>
-            </ul>
-          </div>
-          <div>
-            <h3>A SinoWellJourneys felelős:</h3>
-            <ul>
-              <li>Termékstruktúra és minőség</li>
-              <li>Beszállítók kiválasztása és koordináció</li>
-              <li>Program szervezése és teljesítése</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Kockázat és megfelelőség</h2>
-        <ul>
-          <li>Kizárólag engedéllyel rendelkező kínai utazási irodákkal és egészségügyi intézményekkel szerződünk</li>
-          <li>Minden szolgáltatás hivatalos szolgáltatási megállapodások alapján kerül teljesítésre</li>
-          <li>Az egészségügyi szolgáltatásokat kizárólag engedéllyel rendelkező kínai szolgáltatók nyújtják</li>
-          <li>A SinoWellJourneys nem értékesít közvetlenül a fogyasztók részére</li>
-        </ul>
-        <p class="note">
-          A struktúra támogatja az EU utazási csomagokra vonatkozó szabályainak, a fogyasztóvédelmi követelményeknek,
-          valamint az alkalmazandó kínai előírásoknak való megfelelést.
-        </p>
-      </section>
-
-      <section>
-        <h2>Hogyan lehet partner</h2>
-        <p>Ha engedéllyel rendelkező utazási iroda, és szeretné megkapni nagykereskedelmi árainkat és minta útitervet, írjon nekünk:</p>
-        <p>📧 <a href="mailto:market@sinowelljourneys.eu">market@sinowelljourneys.eu</a></p>
-
-        <div class="links">
-          <a href="index.html">Vissza a főoldalra</a>
-        </div>
-      </section>
+    <div class="links">
+      <a href="index.html">返回首页</a>
+      <a href="page2.html">旅客入口</a>
+      <a href="page3.html">探索中国</a>
     </div>
+  </section>
+</div>
 
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <span class="mono">©</span> SinoWellJourneys
+<!-- ================= HU ================= -->
+<div data-lang="hu" style="display:none">
+  <section>
+    <p>
+      A SinoWellJourneys professzionálisan felépített kínai kulturális és wellness utazásokat kínál
+      engedéllyel rendelkező európai utazási irodák számára.
+    </p>
+    <p>
+      Nagykereskedelmi és utazásszervező platformként működünk,
+      csökkentve a tengerentúli működési és megfelelőségi kockázatokat.
+    </p>
+    <div class="note">
+      Ön az értékesítésre koncentrál.<br>
+      A háttérfolyamatokat mi kezeljük.
     </div>
-  </footer>
+  </section>
+
+  <section>
+    <h2>Partnerkapcsolat</h2>
+    <p>Kapcsolatfelvétel:</p>
+    <p>📧 <a href="mailto:market@sinowelljourneys.eu">market@sinowelljourneys.eu</a></p>
+
+    <div class="links">
+      <a href="index.html">Vissza a főoldalra</a>
+      <a href="page2.html">Utazóknak</a>
+      <a href="page3.html">Kína felfedezése</a>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">© SinoWellJourneys</div>
+</footer>
 </body>
 </html>
