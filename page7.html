@@ -20,6 +20,15 @@
     }
     .wrap{max-width: 980px; margin: 0 auto;}
     h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
+
+    /* ===== LOGO 样式（与 FAQ / Terms 完全一致） ===== */
+    .logo{
+      height:56px;
+      width:auto;
+      vertical-align:-10px;
+      margin-right:12px;
+    }
+
     .subhead{margin:0; font-size: 18px; opacity:.9;}
     main{padding: 28px 20px 60px;}
     section{
@@ -50,6 +59,15 @@
     .links a:hover{border-color:#cfcfcf;}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
     a{color:#2563eb;}
+
+    /* ===== 手机端 LOGO（与其他页面一致） ===== */
+    @media (max-width: 760px){
+      h1{font-size:34px;}
+      .logo{
+        height:48px;
+        vertical-align:-8px;
+      }
+    }
   </style>
 
   <script>
@@ -74,15 +92,34 @@
 <body>
   <header>
     <div class="wrap">
-      <h1 data-lang="en">Contact Us</h1>
-      <h1 data-lang="zh" style="display:none">联系我们</h1>
-      <h1 data-lang="hu" style="display:none">Kapcsolat</h1>
+      <h1 data-lang="en">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Contact Us
+      </h1>
+      <h1 data-lang="zh" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        联系我们
+      </h1>
+      <h1 data-lang="hu" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Kapcsolat
+      </h1>
 
-      <p class="subhead" data-lang="en">SinoWellJourneys — EU Travel Organiser for China Cultural &amp; Wellness Programs</p>
-      <p class="subhead" data-lang="zh" style="display:none">SinoWellJourneys —— 面向中国文化与康养项目的欧盟旅行组织方</p>
-      <p class="subhead" data-lang="hu" style="display:none">SinoWellJourneys — EU-s utazásszervező kínai kulturális &amp; wellness programokhoz</p>
+      <p class="subhead" data-lang="en">
+        SinoWellJourneys — EU Travel Organiser for China Cultural &amp; Wellness Programs
+      </p>
+      <p class="subhead" data-lang="zh" style="display:none">
+        SinoWellJourneys —— 面向中国文化与康养项目的欧盟旅行组织方
+      </p>
+      <p class="subhead" data-lang="hu" style="display:none">
+        SinoWellJourneys — EU-s utazásszervező kínai kulturális &amp; wellness programokhoz
+      </p>
     </div>
   </header>
+
+</body>
+</html>
+
 
   <main class="wrap">
 <!-- ===== Back to Home (Top) ===== -->
