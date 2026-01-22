@@ -21,6 +21,7 @@
     .wrap{max-width: 980px; margin: 0 auto;}
     h1{margin:0 0 10px 0; font-size: 40px; letter-spacing: .2px;}
 
+    /* ===== LOGO 样式（与 FAQ 完全一致） ===== */
     .logo{
       height:56px;
       width:auto;
@@ -39,7 +40,15 @@
       box-shadow: 0 1px 2px rgba(0,0,0,.04);
     }
     h2{margin: 0 0 10px 0; font-size: 22px;}
-    ul{margin: 8px 0 0 20px;}
+    h3{margin: 14px 0 6px; font-size: 18px;}
+    ul,ol{margin: 8px 0 0 20px;}
+    .note{
+      background:#f3f6ff;
+      border: 1px solid #dfe7ff;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
     footer{
       padding: 18px 20px 30px;
       color:#666;
@@ -56,66 +65,399 @@
       background:#fff;
     }
     .links a:hover{border-color:#cfcfcf;}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
     a{color:#2563eb;}
 
+    /* ===== 手机端 LOGO（与 FAQ 完全一致） ===== */
     @media (max-width: 760px){
       h1{font-size:34px;}
-      .logo{height:48px; vertical-align:-8px;}
+      .logo{
+        height:48px;
+        vertical-align:-8px;
+      }
     }
   </style>
 
   <script>
     const LANG_KEY = 'swj_lang';
+
     function applyLang(lang){
       document.querySelectorAll('[data-lang]').forEach(el=>{
         el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
       });
+      document.documentElement.lang = lang;
     }
-    window.addEventListener('DOMContentLoaded', ()=>{
-      applyLang(localStorage.getItem(LANG_KEY) || 'en');
+
+    window.addEventListener('DOMContentLoaded', function(){
+      let lang = 'en';
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      if(!['en','zh','hu'].includes(lang)) lang = 'en';
+      applyLang(lang);
     });
   </script>
 </head>
 
 <body>
+  <header>
+    <div class="wrap">
+      <h1 data-lang="en">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Terms of Use &amp; Legal Disclaimer
+      </h1>
+      <h1 data-lang="zh" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        使用条款与法律声明
+      </h1>
+      <h1 data-lang="hu" style="display:none">
+        <img src="./assets/logo.png" alt="SinoWellJourneys" class="logo" onerror="this.style.display='none'">
+        Felhasználási feltételek &amp; jogi nyilatkozat
+      </h1>
 
-<header>
-  <div class="wrap">
-    <h1 data-lang="en"><img src="./assets/logo.png" class="logo">Terms of Use &amp; Legal Disclaimer</h1>
-    <h1 data-lang="zh" style="display:none"><img src="./assets/logo.png" class="logo">使用条款与法律声明</h1>
-    <h1 data-lang="hu" style="display:none"><img src="./assets/logo.png" class="logo">Felhasználási feltételek</h1>
-    <p class="subhead" data-lang="en">Effective Date</p>
-    <p class="subhead" data-lang="zh" style="display:none">生效日期</p>
-    <p class="subhead" data-lang="hu" style="display:none">Hatálybalépés</p>
-  </div>
-</header>
+      <p class="subhead" data-lang="en">Effective Date: [insert date]</p>
+      <p class="subhead" data-lang="zh" style="display:none">生效日期：[填写日期]</p>
+      <p class="subhead" data-lang="hu" style="display:none">Hatálybalépés dátuma: [dátum]</p>
+    </div>
+  </header>
 
-<main class="wrap">
+  <main class="wrap">
+    <!-- ===== Back to Home (Top) ===== -->
+    <div data-lang="en" class="links" style="margin: 6px 0 14px;">
+      <a href="index.html">← Back to Home</a>
+    </div>
 
-<!-- ================= EN ================= -->
-<div data-lang="en">
-  <section><p>These Terms of Use govern your access to SinoWellJourneys.</p></section>
-  <section><h2>1. Nature of the Website</h2><p>Informational only.</p></section>
-</div>
+    <div data-lang="zh" class="links" style="display:none; margin: 6px 0 14px;">
+      <a href="index.html">← 返回首页</a>
+    </div>
 
-<!-- ================= 中文 ================= -->
-<div data-lang="zh" style="display:none">
-  <section><p>本使用条款适用于 SinoWellJourneys 网站。</p></section>
-</div>
+    <div data-lang="hu" class="links" style="display:none; margin: 6px 0 14px;">
+      <a href="index.html">← Vissza a főoldalra</a>
+    </div>
 
-<!-- ================= HU ================= -->
-<div data-lang="hu" style="display:none">
-  <section><p>A jelen feltételek a SinoWellJourneys weboldalára vonatkoznak.</p></section>
-</div>
+    <!-- ================= EN ================= -->
+    <div data-lang="en">
+      <section>
+        <p>
+          These Terms of Use govern your access to and use of the <b>SinoWellJourneys</b> website operated by
+          <b>SinoWellJourneys Platform Kft</b>, Budapest, Hungary (“SinoWellJourneys”).
+        </p>
+      </section>
 
-</main>
+      <section>
+        <h2>1. Nature of the Website</h2>
+        <p>This website is an informational platform.</p>
+        <p>
+          SinoWellJourneys does not operate as a retail travel agency and does not sell travel services directly to consumers.
+          All travel bookings, payments and customer contracts are handled by independent, licensed travel agencies.
+        </p>
+      </section>
 
-<footer>
-  <div class="wrap">
-    <div>© 2026 SinoWellJourneys – Budapest, Hungary</div>
-    <div>Email: <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></div>
-  </div>
-</footer>
+      <section>
+        <h2>2. No Direct Sales</h2>
+        <p>SinoWellJourneys does not:</p>
+        <ul>
+          <li>Accept bookings</li>
+          <li>Process payments</li>
+          <li>Issue tickets</li>
+          <li>Enter into travel contracts with end customers</li>
+        </ul>
+        <p>
+          Any references to prices, itineraries or programs are for informational purposes only.
+        </p>
+      </section>
 
+      <section>
+        <h2>3. Role of SinoWellJourneys</h2>
+        <p>SinoWellJourneys acts as:</p>
+        <ul>
+          <li>A travel organiser</li>
+          <li>A wholesale product provider</li>
+          <li>A cross-border service coordinator</li>
+        </ul>
+        <p>
+          SinoWellJourneys contracts with licensed Chinese travel agencies and medical institutions to arrange travel and wellness programs
+          for European travel agencies.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Medical Disclaimer</h2>
+        <p>
+          SinoWellJourneys does not provide medical advice, diagnosis or treatment.
+          All medical and wellness services are provided solely by licensed Chinese medical institutions.
+          No medical outcomes are guaranteed.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Third-Party Services</h2>
+        <p>
+          All travel, accommodation, transport, guiding and medical services are provided by independent third-party suppliers.
+          SinoWellJourneys is not responsible for the acts or omissions of such suppliers beyond its contractual obligations to travel agencies.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Limitation of Liability</h2>
+        <p>SinoWellJourneys shall not be liable for:</p>
+        <ul>
+          <li>Any direct or indirect loss</li>
+          <li>Personal dissatisfaction</li>
+          <li>Medical outcomes</li>
+          <li>Any consumer claims</li>
+        </ul>
+        <p>
+          All customer claims must be addressed to the travel agency with which the customer booked.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Intellectual Property</h2>
+        <p>
+          All content, trademarks and materials on this website belong to SinoWellJourneys or its partners and may not be used without permission.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Governing Law</h2>
+        <p>These Terms shall be governed by the laws of Hungary.</p>
+      </section>
+
+      <section>
+        <h2>9. Contact</h2>
+        <p>
+          For legal or compliance inquiries:<br/>
+          📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+        </p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">Back to Home</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= 中文 ================= -->
+    <div data-lang="zh" style="display:none">
+      <section>
+        <p>
+          本《使用条款》适用于您对由匈牙利布达佩斯注册公司 <b>SinoWellJourneys Platform Kft</b> 运营的
+          <b>SinoWellJourneys</b> 网站的访问与使用（以下简称 “SinoWellJourneys”）。
+        </p>
+      </section>
+
+      <section>
+        <h2>1. 网站性质</h2>
+        <p>本网站为信息展示平台。</p>
+        <p>
+          SinoWellJourneys 不作为零售旅行社运营，也不直接向消费者销售旅游服务。
+          所有预订、付款与客户合同均由独立的持牌旅行社处理。
+        </p>
+      </section>
+
+      <section>
+        <h2>2. 不直接销售</h2>
+        <p>SinoWellJourneys 不会：</p>
+        <ul>
+          <li>接受预订</li>
+          <li>处理付款</li>
+          <li>签发票据/票券</li>
+          <li>与终端客户订立旅游合同</li>
+        </ul>
+        <p>
+          网站中涉及价格、行程或项目的任何信息仅供参考。
+        </p>
+      </section>
+
+      <section>
+        <h2>3. SinoWellJourneys 的角色</h2>
+        <p>SinoWellJourneys 的角色包括：</p>
+        <ul>
+          <li>旅行组织方</li>
+          <li>批发产品提供方</li>
+          <li>跨境服务协调方</li>
+        </ul>
+        <p>
+          SinoWellJourneys 与具备资质的中国旅行社与医疗机构签约，为欧洲旅行社安排旅行与康养项目。
+        </p>
+      </section>
+
+      <section>
+        <h2>4. 医疗免责声明</h2>
+        <p>
+          SinoWellJourneys 不提供医疗建议、诊断或治疗。
+          所有医疗与康养服务仅由中国境内具备资质的医疗机构提供。
+          不保证任何医疗结果。
+        </p>
+      </section>
+
+      <section>
+        <h2>5. 第三方服务</h2>
+        <p>
+          所有旅行、住宿、交通、导游及医疗服务均由独立第三方供应商提供。
+          除对旅行社的合同义务范围外，SinoWellJourneys 不对该等供应商的行为或疏漏承担责任。
+        </p>
+      </section>
+
+      <section>
+        <h2>6. 责任限制</h2>
+        <p>SinoWellJourneys 不对以下事项承担责任：</p>
+        <ul>
+          <li>任何直接或间接损失</li>
+          <li>个人主观不满意</li>
+          <li>医疗结果</li>
+          <li>任何消费者索赔</li>
+        </ul>
+        <p>
+          所有客户索赔均应向与客户签约并完成销售的旅行社提出。
+        </p>
+      </section>
+
+      <section>
+        <h2>7. 知识产权</h2>
+        <p>
+          本网站所有内容、商标及材料均归 SinoWellJourneys 或其合作伙伴所有，未经许可不得使用。
+        </p>
+      </section>
+
+      <section>
+        <h2>8. 适用法律</h2>
+        <p>本条款受匈牙利法律管辖。</p>
+      </section>
+
+      <section>
+        <h2>9. 联系方式</h2>
+        <p>
+          如需法律或合规咨询：<br/>
+          📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+        </p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">返回首页</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= HU ================= -->
+    <div data-lang="hu" style="display:none">
+      <section>
+        <p>
+          Jelen Felhasználási Feltételek a <b>SinoWellJourneys</b> weboldalának használatára vonatkoznak, amelyet a
+          <b>SinoWellJourneys Platform Kft</b> (Budapest, Magyarország) üzemeltet („SinoWellJourneys”).
+        </p>
+      </section>
+
+      <section>
+        <h2>1. A weboldal jellege</h2>
+        <p>Ez a weboldal tájékoztató platform.</p>
+        <p>
+          A SinoWellJourneys nem kiskereskedelmi utazási iroda, és nem értékesít közvetlenül utazási szolgáltatásokat fogyasztóknak.
+          Minden foglalást, fizetést és ügyfélszerződést független, engedéllyel rendelkező utazási irodák kezelnek.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Nincs közvetlen értékesítés</h2>
+        <p>A SinoWellJourneys nem:</p>
+        <ul>
+          <li>Fogad foglalásokat</li>
+          <li>Dolgoz fel fizetéseket</li>
+          <li>Állít ki jegyeket</li>
+          <li>Köt utazási szerződést a végfelhasználókkal</li>
+        </ul>
+        <p>
+          Az árakra, útitervekre vagy programokra vonatkozó bármely hivatkozás kizárólag tájékoztató jellegű.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. A SinoWellJourneys szerepe</h2>
+        <p>A SinoWellJourneys szerepe:</p>
+        <ul>
+          <li>Utazásszervező</li>
+          <li>Nagykereskedelmi termékszolgáltató</li>
+          <li>Határokon átnyúló szolgáltatáskoordinátor</li>
+        </ul>
+        <p>
+          A SinoWellJourneys engedéllyel rendelkező kínai utazási irodákkal és egészségügyi intézményekkel szerződik,
+          hogy európai utazási irodák számára utazási és wellness programokat szervezzen.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Orvosi jogi nyilatkozat</h2>
+        <p>
+          A SinoWellJourneys nem nyújt orvosi tanácsadást, diagnózist vagy kezelést.
+          Minden orvosi és wellness szolgáltatást kizárólag engedéllyel rendelkező kínai egészségügyi intézmények nyújtanak.
+          Orvosi eredmények nem garantáltak.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Harmadik fél szolgáltatásai</h2>
+        <p>
+          Minden utazási, szállás-, közlekedési, idegenvezetői és egészségügyi szolgáltatást független harmadik fél beszállítók nyújtanak.
+          A SinoWellJourneys nem felel ezen beszállítók cselekményeiért vagy mulasztásaiért a travel agency-k felé fennálló szerződéses kötelezettségein túl.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Felelősség korlátozása</h2>
+        <p>A SinoWellJourneys nem felel:</p>
+        <ul>
+          <li>Bármely közvetlen vagy közvetett veszteségért</li>
+          <li>Személyes elégedetlenségért</li>
+          <li>Orvosi kimenetelekért</li>
+          <li>Bármely fogyasztói igényért</li>
+        </ul>
+        <p>
+          Minden ügyfélpanaszt annak az utazási irodának kell címezni, amelyen keresztül a foglalás történt.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Szellemi tulajdon</h2>
+        <p>
+          A weboldalon található minden tartalom, védjegy és anyag a SinoWellJourneys vagy partnerei tulajdona, és engedély nélkül nem használható fel.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Irányadó jog</h2>
+        <p>Jelen Feltételekre Magyarország joga az irányadó.</p>
+      </section>
+
+      <section>
+        <h2>9. Kapcsolat</h2>
+        <p>
+          Jogi vagy megfelelőségi kérdések esetén:<br/>
+          📧 <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+        </p>
+
+        <div class="links">
+          <a href="index.html" style="color:#111;">Vissza a főoldalra</a>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap" style="text-align:center; line-height:1.8;">
+      <div>
+        <span class="mono">©</span> 2026 SinoWellJourneys – SinoWellJourneys Travel Platform Kft
+      </div>
+      <div>
+        Budapest, Hungary
+      </div>
+      <div>
+        Email: <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
+      </div>
+      <div>
+        SinoWellJourneys operates as a travel organiser and wholesale product platform.
+      </div>
+      <div>
+        All bookings and payments are handled by licensed travel agencies.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
