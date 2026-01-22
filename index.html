@@ -65,6 +65,7 @@
       text-align:center;
     }
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    a{color:#2563eb;}
 
     /* --- minimal add: language bar --- */
     .langbar{
@@ -74,6 +75,7 @@
       display:flex;
       gap:8px;
       align-items:center;
+      z-index: 2;
     }
     .langbar button{
       border:1px solid rgba(255,255,255,.25);
@@ -88,52 +90,99 @@
       background: rgba(255,255,255,.16);
       border-color: rgba(255,255,255,.4);
     }
+
+    /* ===== Top Navigation (beautified) ===== */
+    .topnav{
+      margin-top: 14px;
+    }
+    .topnav .navrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+      line-height:1;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.28);
+    }
+    .pill:active{ transform: translateY(0px); }
+    .pill small{
+      opacity:.85;
+      font-size:12px;
+      letter-spacing:.2px;
+    }
+    .pill.is-current{
+      background:#fff;
+      color:#111;
+      border-color:#fff;
+    }
+    .pill.is-current small{opacity:.7;}
+
+    @media (max-width:760px){
+      .pill{padding:10px 12px;}
+      header{padding: 44px 16px;}
+      .langbar{right:16px;}
+    }
   </style>
 
   <script>
-  const LANG_KEY = 'swj_lang';
+    const LANG_KEY = 'swj_lang';
 
-  function setLang(lang){
-    // 1) persist selection so other pages can inherit it
-    try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+    function setLang(lang){
+      try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
 
-    // 2) toggle all language blocks
-    document.querySelectorAll('[data-lang]').forEach(el=>{
-      el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+
+      document.querySelectorAll('.langbar button').forEach(btn=>{
+        btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+      });
+
+      document.documentElement.lang = lang;
+    }
+
+    function highlightCurrentNav(){
+      try{
+        const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        document.querySelectorAll('.topnav a.pill').forEach(a=>{
+          const href = (a.getAttribute('href') || '').toLowerCase();
+          if(href === file) a.classList.add('is-current');
+        });
+      }catch(e){}
+    }
+
+    window.addEventListener('DOMContentLoaded', function(){
+      let lang = 'en';
+      try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch(e) {}
+      if(!['en','zh','hu'].includes(lang)) lang = 'en';
+      setLang(lang);
+      highlightCurrentNav();
     });
-
-    // 3) button state
-    document.querySelectorAll('.langbar button').forEach(btn=>{
-      btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
-    });
-
-    // 4) html lang attribute
-    document.documentElement.lang = lang;
-  }
-
-  window.addEventListener('DOMContentLoaded', function(){
-    // restore last selection, fallback to EN
-    let lang = 'en';
-    try {
-      lang = localStorage.getItem(LANG_KEY) || 'en';
-    } catch(e) {}
-
-    // safety fallback if stored value is unexpected
-    if(!['en','zh','hu'].includes(lang)) lang = 'en';
-
-    setLang(lang);
-  });
-</script>
-
+  </script>
 </head>
 
 <body>
   <header>
     <div class="langbar">
       <button data-lang-btn="en" onclick="setLang('en')">EN</button>
-     
       <button data-lang-btn="zh" onclick="setLang('zh')">中文</button>
-    
       <button data-lang-btn="hu" onclick="setLang('hu')">HU</button>
     </div>
 
@@ -149,6 +198,54 @@
       <p class="subhead" data-lang="hu" style="display:none">
         Kínai kulturális és wellness utazási programok európai utazási irodák számára
       </p>
+
+      <!-- ✅ Top Navigation (replaces "Other Pages") -->
+      <div class="topnav">
+        <!-- EN -->
+        <div class="navrow" data-lang="en">
+          <a class="pill" href="index.html"><small>Home</small>Overview</a>
+          <a class="pill" href="page1.html"><small>Page 1</small>Agencies</a>
+          <a class="pill" href="page2.html"><small>Page 2</small>Travellers</a>
+          <a class="pill" href="page3.html"><small>Page 3</small>Compliance</a>
+          <a class="pill" href="page4.html"><small>Page 4</small>About</a>
+          <a class="pill" href="page5.html"><small>Page 5</small>FAQ</a>
+          <a class="pill" href="page6.html"><small>Page 6</small>Terms</a>
+          <a class="pill" href="page7.html"><small>Page 7</small>Contact</a>
+          <a class="pill" href="page8.html"><small>Page 8</small>GDPR</a>
+          <a class="pill" href="page9.html"><small>Page 9</small>Programs</a>
+          <a class="pill" href="page10.html"><small>Page 10</small>Page10</a>
+        </div>
+
+        <!-- 中文 -->
+        <div class="navrow" data-lang="zh" style="display:none">
+          <a class="pill" href="index.html"><small>首页</small>概览</a>
+          <a class="pill" href="page1.html"><small>第1页</small>旅行社</a>
+          <a class="pill" href="page2.html"><small>第2页</small>旅客</a>
+          <a class="pill" href="page3.html"><small>第3页</small>合规</a>
+          <a class="pill" href="page4.html"><small>第4页</small>关于</a>
+          <a class="pill" href="page5.html"><small>第5页</small>FAQ</a>
+          <a class="pill" href="page6.html"><small>第6页</small>条款</a>
+          <a class="pill" href="page7.html"><small>第7页</small>联系</a>
+          <a class="pill" href="page8.html"><small>第8页</small>GDPR</a>
+          <a class="pill" href="page9.html"><small>第9页</small>项目</a>
+          <a class="pill" href="page10.html"><small>第10页</small>Page10</a>
+        </div>
+
+        <!-- HU -->
+        <div class="navrow" data-lang="hu" style="display:none">
+          <a class="pill" href="index.html"><small>Főoldal</small>Áttekintés</a>
+          <a class="pill" href="page1.html"><small>1.</small>Irodáknak</a>
+          <a class="pill" href="page2.html"><small>2.</small>Utazóknak</a>
+          <a class="pill" href="page3.html"><small>3.</small>Megfelelőség</a>
+          <a class="pill" href="page4.html"><small>4.</small>Rólunk</a>
+          <a class="pill" href="page5.html"><small>5.</small>GYIK</a>
+          <a class="pill" href="page6.html"><small>6.</small>Feltételek</a>
+          <a class="pill" href="page7.html"><small>7.</small>Kapcsolat</a>
+          <a class="pill" href="page8.html"><small>8.</small>GDPR</a>
+          <a class="pill" href="page9.html"><small>9.</small>Programok</a>
+          <a class="pill" href="page10.html"><small>10.</small>Page10</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -502,79 +599,15 @@
       </div>
     </section>
 
-    <section>
-      <div data-lang="en">
-        <h2>Other Pages</h2>
-        <p>Quick links to your existing demo pages:</p>
-        <div class="links">
-          <a href="page1.html">For Travel Agencies</a>
-          <a href="page2.html">For Traveller</a>
-          <a href="page3.html">Compliance & Trust</a>
-          <a href="page4.html">About Us</a>
-          <a href="page5.html">FAQ</a>
-          <a href="page6.html">Terms</a>
-          <a href="page7.html">Contacts</a>
-          <a href="page8.html">GDPR</a>
-          <a href="page9.html">Programs</a>
-          <a href="page10.html">page10</a>
-        </div>
-      </div>
-
-      <div data-lang="zh" style="display:none">
-        <h2>其他页面</h2>
-        <p>快速访问现有演示页面：</p>
-        <div class="links">
-          <a href="page1.html">旅行社专区</a>
-          <a href="page2.html">旅客者专区</a>
-          <a href="page3.html">合规与信任</a>
-          <a href="page4.html">关于我们</a>
-          <a href="page5.html">常见问题</a>
-          <a href="page6.html">条款</a>
-          <a href="page7.html">联系我们</a>
-          <a href="page8.html">GDPR</a>
-          <a href="page9.html">项目</a>
-          <a href="page10.html">page10</a>
-
-        </div>
-      </div>
-
-      <div data-lang="hu" style="display:none">
-        <h2>Egyéb oldalak</h2>
-        <p>Gyors linkek a meglévő demó oldalakhoz:</p>
-        <div class="links">
-          <a href="page1.html">Utazási irodáknak</a>
-          <a href="page2.html">Utazóknak</a>
-          <a href="page3.html">Megfelelőség és bizalom</a>
-          <a href="page4.html">Rólunk</a>
-          <a href="page5.html">GYIK</a>
-          <a href="page6.html">Felhasználási feltételek</a>
-          <a href="page7.html">Kapcsolatok</a>
-          <a href="page8.html">GDPR</a>
-          <a href="page9.html">Programok</a>
-          <a href="page10.html">page10</a>
-
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <div class="wrap" style="text-align:center; line-height:1.8;">
-    <div>
-      <span class="mono">©</span> 2026 SinoWellJourneys – SinoWellJourneys Travel Platform Kft
-    </div>
-    <div>
-      Budapest, Hungary
-    </div>
-    <div>
-      Email: <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a>
-    </div>
-    <div>
-      SinoWellJourneys operates as a travel organiser and wholesale product platform.
-    <div>
-      All bookings and payments are handled by licensed travel agencies.
-    </div>
+      <div><span class="mono">©</span> 2026 SinoWellJourneys – SinoWellJourneys Travel Platform Kft</div>
+      <div>Budapest, Hungary</div>
+      <div>Email: <a href="mailto:info@sinowelljourneys.eu">info@sinowelljourneys.eu</a></div>
+      <div>SinoWellJourneys operates as a travel organiser and wholesale product platform.</div>
+      <div>All bookings and payments are handled by licensed travel agencies.</div>
     </div>
   </footer>
 
